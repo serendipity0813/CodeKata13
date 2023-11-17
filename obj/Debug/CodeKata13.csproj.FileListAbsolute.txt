@@ -1,0 +1,7 @@
+C:\Users\junyoung\source\repos\unity\CodeKata13\CodeKata13\bin\Debug\CodeKata13.exe.config
+C:\Users\junyoung\source\repos\unity\CodeKata13\CodeKata13\bin\Debug\CodeKata13.exe
+C:\Users\junyoung\source\repos\unity\CodeKata13\CodeKata13\bin\Debug\CodeKata13.pdb
+C:\Users\junyoung\source\repos\unity\CodeKata13\CodeKata13\obj\Debug\CodeKata13.csproj.AssemblyReference.cache
+C:\Users\junyoung\source\repos\unity\CodeKata13\CodeKata13\obj\Debug\CodeKata13.csproj.CoreCompileInputs.cache
+C:\Users\junyoung\source\repos\unity\CodeKata13\CodeKata13\obj\Debug\CodeKata13.exe
+C:\Users\junyoung\source\repos\unity\CodeKata13\CodeKata13\obj\Debug\CodeKata13.pdb
