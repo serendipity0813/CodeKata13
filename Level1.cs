@@ -8,7 +8,7 @@ namespace CodeKata13
 {
     public class Level1
     {
-        public static string Solution1(int num)
+        public static string Solution11(int num)
         {
             string answer = "";
 
@@ -26,7 +26,7 @@ namespace CodeKata13
 
         }
 
-        public static float Solution2(int[] arr)
+        public static float Solution12(int[] arr)
         {
             int sum = 0;
             int average = 0;
