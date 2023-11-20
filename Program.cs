@@ -21,7 +21,7 @@ namespace CodeKata13
             //Level_10.Solution7(1, 16);
             //Level_10.Solution8(111);
             //Level_10.Solution9(10);
-            int[] problem10 = { 2, 3, 4, 5, 6, 7, 8, 9, 10};
+            int[] problem10 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
             Level_10.Solution10(problem10);
 
 
