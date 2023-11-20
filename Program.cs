@@ -11,10 +11,10 @@ namespace CodeKata13
 
         static void Main(string[] args)
         {
-            //Level_10.solution1(20, 7);
-            //Level_10.solution2(20, 7);
-            Level_10.solution3(20, 7);
-
+            //Level_10.Solution1(20, 7);
+            //Level_10.Solution2(20, 7);
+            //Level_10.Solution3(20, 7);
+            Level_10.Solution4(40);
 
 
 
