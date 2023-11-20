@@ -15,7 +15,8 @@ namespace CodeKata13
             //Level_10.Solution2(20, 7);
             //Level_10.Solution3(20, 7);
             //Level_10.Solution4(40);
-            Level_10.Solution5(7, 99);
+            //Level_10.Solution5(7, 99);
+            Level_10.Solution6(2, 100);
 
 
 
