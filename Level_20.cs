@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CodeKata13
 {
-    public class Level20
+    public class Level_20
     {
         public static string Solution11(int num)
         {
