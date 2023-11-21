@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.ExceptionServices;
 
 namespace CodeKata13
 {
@@ -72,11 +69,130 @@ namespace CodeKata13
 
         public static int Solution13(int num)
         {
+            int answer = 0;
+            int[] arr = new int[6];
+
+            if (num >= 100000)
+            {
+                arr[0] = num / 100000;
+                num -= arr[0] * 100000;
+            }
+            else
+                arr[0] = 0;
+
+            if (num >= 10000)
+            {
+                arr[1] = num / 10000;
+                num -= arr[1] * 10000;
+            }
+            else
+                arr[1] = 0;
+
+            if (num >= 1000)
+            {
+                arr[2] = num / 1000;
+                num -= arr[2] * 1000;
+            }
+            else
+                arr[2] = 0;
+
+            if (num >= 100)
+            {
+                arr[3] = num / 100;
+                num -= arr[3] * 100;
+            }
+            else
+                arr[3] = 0;
+
+            if (num >= 10)
+            {
+                arr[4] = num / 10;
+                num -= arr[4] * 10;
+            }
+            else
+                arr[4] = 0;
+
+            arr[5] = num;
+
+            for(int i=0; i<arr.Length; i++)
+            {
+                answer += arr[i];
+            }
+
+            Console.WriteLine(answer);
+
+            return answer;
+        }
+
+        public static int Solution14(int n)
+        {
+            int answer = 0;
+
+            for(int i=1; i<=n; i++)
+            {
+                if(n%i == 0)
+                {
+                    answer += i;
+                }
+            }
+
+            Console.WriteLine(answer);
+
+            return answer;
+        }
+
+        public static int Solution15(int n)
+        {
+            int answer = 0;
+
+            for (int i = 2; i < n; i++)
+            {
+                if (n % i == 1)
+                {
+                    answer = i;
+                    break;
+                }
+            }
+
+            Console.WriteLine(answer);
+
+            return answer;
+        }
+
+        public static long[] Solution16(int x, int n)
+        {
+            long[] answer = new long[1000];
+
+            for(int i=1; i <= n; i++)
+            {
+                answer[i - 1] = x * i;
+            }
+
+            for(int j=0; j<n; j++)
+            {
+                Console.Write(answer[j]);
+            }
 
 
+            return answer;
+        }
 
+        public static int[] Solution17(long n)
+        {
+            int[] answer = new int[12];
+            int[] arr = new int[12];
 
-            return 0;
+           for(int i=0; i<=n; i++)
+            {
+                for(int j=0; j<=n; j++)
+                {
+
+                }
+            }
+
+            Console.WriteLine(answer);
+
+            return answer;
         }
     }
 }
