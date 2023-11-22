@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Runtime.ExceptionServices;
 
 namespace CodeKata13
@@ -180,14 +182,96 @@ namespace CodeKata13
         public static int[] Solution17(long n)
         {
             int[] answer = new int[12];
-            int[] arr = new int[12];
+            int count = 0;
 
-           for(int i=0; i<=n; i++)
+            while(n>0)
             {
-                for(int j=0; j<=n; j++)
-                {
+                answer[count] = (int)n % 10;
+                n = n / 10;
+                count++;
+            }
 
+            for(int i=0; i<count; i++)
+            {
+                Console.Write(answer[i]);
+            }
+
+
+            return answer;
+        }
+
+        public static int Solution18(string s)
+        {
+            int answer = 0;
+
+            answer = Convert.ToInt32(s);
+
+
+            Console.WriteLine(answer);
+
+            return answer;
+
+        }
+
+        public static int Solution19(int n)
+        {
+            int answer = 0;
+            int root = 1;
+
+            while(true)
+            {
+                if (n / root == root && n % root == 0)
+                {
+                    answer = (root + 1) * (root + 1);
+                    break;
                 }
+                else if(root*root>n) 
+                {
+                    answer = -1;
+                    break;
+                }
+                else
+                {
+                    root++;
+                }
+
+            }
+
+            Console.WriteLine(answer);
+
+            return answer;
+        }
+
+        public static long Solution20(long n)
+        {
+            long answer = 0;
+            int count = 0;
+            int temp = 0;
+            int[] nums = new int[10];
+            while(n> 0)
+            {
+                    nums[count] = (int)n % 10;
+                    n = n / 10;
+                    count++;
+            }
+
+            for(int i=0; i < count; i++)
+            {
+                for(int  j=1; j < count; j++)
+                {
+                    if (nums[i] < nums[j])
+                    {
+                        temp = nums[i];
+                        nums[i] = nums[j];
+                        nums[j] = temp;
+                    }
+                }
+            }
+
+            for( int i=0; i < count-1; i++)
+            {
+                answer = answer + nums[i];
+                answer = answer * 10;
             }
 
             Console.WriteLine(answer);

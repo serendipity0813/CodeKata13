@@ -31,7 +31,10 @@ namespace CodeKata13
             //Level_20.Solution14(16);
             //Level_20.Solution15(10);
             //Level_20.Solution16(2, 5);
-            Level_20.Solution17(10000);
+            //Level_20.Solution17(12345);
+            //Level_20.Solution18("1234");
+            //Level_20.Solution19(121);
+            Level_20.Solution20(118372);
 
 
         }
