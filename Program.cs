@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Management.Instrumentation;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -34,7 +35,14 @@ namespace CodeKata13
             //Level_20.Solution17(12345);
             //Level_20.Solution18("1234");
             //Level_20.Solution19(121);
-            Level_20.Solution20(118372);
+            //Level_20.Solution20(118372);
+            //Level_30.Solution21(13);
+            //Level_30.Solution22(5, 3);
+            //Level_30.Solution23(626331);
+            //string[] arr = new string[] { "Lucy", "Jane", "Kim", "Jhon" };
+            //Level_30.Solution24(arr);
+            int[] arr = new int[] { 5, 9, 7, 10 };
+            Level_30.Solution25(arr, 5);
 
 
         }

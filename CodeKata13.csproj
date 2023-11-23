@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Level_20.cs" />
     <Compile Include="Level_10.cs" />
+    <Compile Include="Level_30.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
