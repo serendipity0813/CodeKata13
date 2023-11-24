@@ -41,9 +41,16 @@ namespace CodeKata13
             //Level_30.Solution23(626331);
             //string[] arr = new string[] { "Lucy", "Jane", "Kim", "Jhon" };
             //Level_30.Solution24(arr);
-            int[] arr = new int[] { 5, 9, 7, 10 };
-            Level_30.Solution25(arr, 5);
-
+            //int[] arr = new int[] { 5, 9, 7, 10 };
+            //Level_30.Solution25(arr, 5);
+            //int[] arr = new int[] { 4, 7, 12 };
+            //bool[] arr2 = new bool[] { true, false, true };
+            //Level_30.Solution26(arr, arr2);
+            //Level_30.Solution27("01033334444");
+            //int[] arr = { 5, 8, 4, 0, 6, 7, 9,};
+            //Level_30.Solution28(arr);
+            int[] arr = {1, 4, 2, 8, 5, 7};
+            Level_30.Solution29(arr);
 
         }
     }

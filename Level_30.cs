@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -120,42 +121,174 @@ namespace CodeKata13
 
         public static int[] Solution25(int[] arr, int divisor)
         {
-            //버그수정 해야함
+            //코드수정 완료 - 제출 필요
+            int[] list = new int[arr.Length];
 
-            int[] answer = new int[10];
-            int min = 0;
             int count = 0;
             int check = 0;
 
             while (count < arr.Length)
             {
-                min = arr[count];
-                for (int i = count+1; i < arr.Length; i++)
-                {
-                    if (arr[i] < min)
-                        min = arr[i];
-                }
 
-                if (min % divisor == 0)
+                if (arr[count] % divisor == 0)
                 {
-                    answer[check] = min;
+                    list[check] = arr[count];
                     check++;
                 }
 
                 count++;
             }
 
-            if (check == 0)
-                answer[0] = -1;
 
-            for(int j = 0; j < answer.Length; j++)
+            if (check == 0)
             {
-                Console.WriteLine(answer[j]);
+                check++;
+                count = 0;
             }
+
+            
+            int[] answer = new int[check];
+
+            if (count == 0)
+            {
+                answer[0] = -1;
+                Console.WriteLine(answer[0]);
+            }
+            else
+            {
+
+                for (int j = 0; j < count; j++)
+                {
+                    if (list[j] != 0)
+                    {
+                        answer[check - 1] = list[j];
+                        check--;
+                    }
+                }
+
+                Array.Sort(answer);
+
+                for (int j = 0; j < answer.Length; j++)
+                {
+                    Console.Write(answer[j]);
+                    Console.Write(" ");
+                }
+                Console.WriteLine();
+            }
+
 
             return answer;
 
         }
+
+        public static int Solution26(int[] absolute, bool[] signs)
+        {
+            int answer = 123456789;
+            int sum = 0;
+
+            for (int i = 0; i < absolute.Length; i++)
+            {
+                if (signs[i] == true)
+                {
+                    sum += absolute[i];
+                }
+                else if (signs[i] == false)
+                {
+                    sum -= absolute[i];
+                }
+            }
+
+            answer = sum;
+
+            Console.WriteLine(answer);
+
+            return answer;
+        }
+
+        public static string Solution27(string phone_number)
+        {
+            string answer = "";
+            int length = phone_number.Length;
+            string backNumber = phone_number.Substring(phone_number.Length - 4);
+            string frontNumber = "";
+            string star = "*";
+
+            for(int i=0; i < length - 4; i++)
+            {
+                frontNumber += star;
+            }
+
+            answer = frontNumber + backNumber;
+
+            Console.WriteLine(answer);
+
+            return answer;
+        }
+
+        public static int Solution28(int[] numbers)
+        {
+            int answer = -1;
+            int sum = 45;
+
+            for(int i  = 0; i < numbers.Length; i++)
+            {
+                sum -= numbers[i];
+            }
+
+            answer = sum;
+
+            Console.WriteLine(answer);
+            return answer;
+        }
+
+        
+        public static int[] Solution29(int[] arr)
+        {
+            int min = 999;
+            int count = 0;
+            int length = 0;
+
+            if(arr.Length == 1)
+                length = arr.Length;
+            else
+                length = arr.Length - 1;
+
+            int[] answer = new int[length];
+
+            for(int i = 0; i<arr.Length; i++)
+            {
+                if (arr[i] < min)
+                    min = arr[i];
+            }
+
+            for (int j = 0; j < arr.Length; j++)
+            {
+                if (arr[j] != min)
+                {
+                    answer[count] = arr[j];
+                    count++;
+                }
+                else if (arr[j] ==min )
+                {
+                    continue;
+                }
+                     
+            }
+
+            if(arr.Length ==1)
+                answer[0] = -1;
+
+            for (int i = 0; i < answer.Length; i++)
+            {
+                Console.Write(answer[i]);
+            }
+
+            Console.WriteLine();
+            return answer;
+
+        }
+
+
 
 
     }
