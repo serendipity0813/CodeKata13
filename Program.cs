@@ -36,6 +36,8 @@ namespace CodeKata13
             //Level_20.Solution18("1234");
             //Level_20.Solution19(121);
             //Level_20.Solution20(118372);
+
+
             //Level_30.Solution21(13);
             //Level_30.Solution22(5, 3);
             //Level_30.Solution23(626331);
@@ -49,8 +51,11 @@ namespace CodeKata13
             //Level_30.Solution27("01033334444");
             //int[] arr = { 5, 8, 4, 0, 6, 7, 9,};
             //Level_30.Solution28(arr);
-            int[] arr = {1, 4, 2, 8, 5, 7};
-            Level_30.Solution29(arr);
+            //int[] arr = {1, 4, 2, 8, 5, 7};
+            //Level_30.Solution29(arr);
+            Level_30.Solution30("qwer");
+            //Level_40.Solution31(11);
+
 
         }
     }

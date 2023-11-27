@@ -121,7 +121,7 @@ namespace CodeKata13
 
         public static int[] Solution25(int[] arr, int divisor)
         {
-            //코드수정 완료 - 제출 필요
+
             int[] list = new int[arr.Length];
 
             int count = 0;
@@ -288,7 +288,29 @@ namespace CodeKata13
 
         }
 
+        public static string Solution30(string s)
+        {
+            string answer = " ";
 
+            int half = s.Length / 2;
+
+            if (s.Length % 2 == 1)
+            {
+                answer = s.Substring(half, 1);
+            }
+
+            else if (s.Length % 2 == 0)
+            {
+                answer = s.Substring(half-1, 2);
+
+            }
+
+
+            Console.WriteLine(answer);
+
+
+            return answer;
+        }
 
 
     }
