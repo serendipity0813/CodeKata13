@@ -53,9 +53,15 @@ namespace CodeKata13
             //Level_30.Solution28(arr);
             //int[] arr = {1, 4, 2, 8, 5, 7};
             //Level_30.Solution29(arr);
-            Level_30.Solution30("qwer");
+            //Level_30.Solution30("qwer");
             //Level_40.Solution31(11);
-
+            //int[] arr1 = {1, 2, 3, 4 };
+            //int[] arr2 = {-3, -1, 0, 2};
+            //Level_40.Solution32(arr1, arr2);
+            //Level_40.Solution33(24, 27);
+            //Level_40.Solution34("Zbcdefg");
+            //Level_40.Solution35(3, 20, 4);
+            Level_40.Solution36("a234");
 
         }
     }

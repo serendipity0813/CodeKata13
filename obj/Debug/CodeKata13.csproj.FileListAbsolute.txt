@@ -12,3 +12,10 @@ D:\Project\unity\CodeKata13\CodeKata13\bin\Debug\CodeKata13.exe
 D:\Project\unity\CodeKata13\CodeKata13\bin\Debug\CodeKata13.pdb
 D:\Project\unity\CodeKata13\CodeKata13\obj\Debug\CodeKata13.csproj.AssemblyReference.cache
 D:\Project\unity\CodeKata13\CodeKata13\obj\Debug\CodeKata13.csproj.CoreCompileInputs.cache
+C:\Users\junyoung\Documents\Unity\Project\Study\CodeKata13\CodeKata13\bin\Debug\CodeKata13.exe.config
+C:\Users\junyoung\Documents\Unity\Project\Study\CodeKata13\CodeKata13\bin\Debug\CodeKata13.exe
+C:\Users\junyoung\Documents\Unity\Project\Study\CodeKata13\CodeKata13\bin\Debug\CodeKata13.pdb
+C:\Users\junyoung\Documents\Unity\Project\Study\CodeKata13\CodeKata13\obj\Debug\CodeKata13.csproj.AssemblyReference.cache
+C:\Users\junyoung\Documents\Unity\Project\Study\CodeKata13\CodeKata13\obj\Debug\CodeKata13.csproj.CoreCompileInputs.cache
+C:\Users\junyoung\Documents\Unity\Project\Study\CodeKata13\CodeKata13\obj\Debug\CodeKata13.exe
+C:\Users\junyoung\Documents\Unity\Project\Study\CodeKata13\CodeKata13\obj\Debug\CodeKata13.pdb
