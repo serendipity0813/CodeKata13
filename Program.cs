@@ -61,8 +61,20 @@ namespace CodeKata13
             //Level_40.Solution33(24, 27);
             //Level_40.Solution34("Zbcdefg");
             //Level_40.Solution35(3, 20, 4);
-            Level_40.Solution36("a234");
+            //Level_40.Solution36("123d56");
+            //int[,] arr1 = new int[,] {{ 1, 2 } , { 2, 3} };
+            //int[,] arr2 = new int[,] { { 3, 4 }, { 5, 6 } };
+            //Level_40.Solution37(arr1, arr2);
+            //Level_40.Solution38();
+            Level_40.Solution39(1, 2);
+
+
+
 
         }
+
+
+
+
     }
 }

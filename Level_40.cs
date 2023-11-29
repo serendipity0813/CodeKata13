@@ -14,12 +14,12 @@ namespace CodeKata13
             string clap = "수박";
             string halfClap = "수";
 
-            for(int i = 0; i < n/2; i++)
+            for (int i = 0; i < n / 2; i++)
             {
                 answer += clap;
             }
 
-            if(n%2 == 1) 
+            if (n % 2 == 1)
             {
                 answer += halfClap;
             }
@@ -50,10 +50,10 @@ namespace CodeKata13
             int count = 0;
 
 
-            for (int i = left; i<= right; i++)
+            for (int i = left; i <= right; i++)
             {
                 count = 0;
-                for(int j=1; j<=i; j++)
+                for (int j = 1; j <= i; j++)
                 {
                     if (i % j == 0)
                         count++;
@@ -64,9 +64,9 @@ namespace CodeKata13
                 else if (count % 2 == 1)
                     answer -= i;
 
-      
+
             }
-            
+
 
             Console.WriteLine(answer);
             return answer;
@@ -77,8 +77,8 @@ namespace CodeKata13
         {
             string answer = "";
             string[] word = new string[s.Length];
-            
-            for(int i=0; i<s.Length; i++)
+
+            for (int i = 0; i < s.Length; i++)
             {
                 word[i] = s.Substring(i, 1);
             }
@@ -102,7 +102,7 @@ namespace CodeKata13
             int answer = 0;
             int sum = 0;
 
-            for(int i =1; i<=count; i++)
+            for (int i = 1; i <= count; i++)
             {
                 sum += price * i;
             }
@@ -112,7 +112,7 @@ namespace CodeKata13
             else
                 answer = 0;
 
-            Console.WriteLine(answer);  
+            Console.WriteLine(answer);
             return answer;
         }
 
@@ -120,10 +120,85 @@ namespace CodeKata13
         public static bool Solution36(string s)
         {
             bool answer = true;
+            int result = 0;
+            string word = "";
 
+            for (int i = 0; i < s.Length; i++)
+            {
+                word = s.Substring(i, 1);
+                if (int.TryParse(word, out result) == false)
+                {
+                    answer = false;
+                }
+            }
+
+            if (s.Length != 4 && s.Length != 6)
+                answer = false;
+
+
+            Console.WriteLine(answer);
             return answer;
+
         }
 
+        public static int[,] Solution37(int[,] arr1, int[,] arr2)
+        {
+            int row = arr1.GetLength(0);
+            int col = arr1.GetLength(1);
+            int[,] answer = new int[row, col];
 
+            for(int i = 0; i < row; i++)
+            {
+                for(int j = 0; j < col; j++)
+                {
+                    answer[i,j] = arr1[i, j] + arr2[i,j];
+                }
+            }
+
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < col; j++)
+                {
+                    Console.Write(answer[j,i]);
+                }
+                Console.WriteLine();
+            }
+
+            return answer;
+
+
+        }
+
+        public static void Solution38()
+        {
+            string[] input = new string[2];
+
+            input = Console.ReadLine().Split(' ');
+            int row = Int32.Parse(input[0]);
+            int col = Int32.Parse(input[0]);
+
+            for(int i = 0; i < col;i++)
+            {
+                for(int j = 0; j < row; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public static int[] Solution39(int n, int m)
+        {
+            int[] answer = new int[2];
+
+
+
+
+
+
+            Console.WriteLine(answer);
+            return answer;
+        }
     }
+
 }
