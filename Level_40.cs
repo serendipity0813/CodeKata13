@@ -175,7 +175,7 @@ namespace CodeKata13
 
             input = Console.ReadLine().Split(' ');
             int row = Int32.Parse(input[0]);
-            int col = Int32.Parse(input[0]);
+            int col = Int32.Parse(input[1]);
 
             for(int i = 0; i < col;i++)
             {
@@ -190,15 +190,123 @@ namespace CodeKata13
         public static int[] Solution39(int n, int m)
         {
             int[] answer = new int[2];
+            int small = 0;
+            int mul = n * m;
+            int min = 0;
+
+            if(n<m)
+            {
+                small = n;
+                min = m;
+            }
+            else
+            {
+                small = n;
+                min = n;
+            }
 
 
+            for(int i = 1; i <= small; i++)
+            {
+                if(n%i == 0 && m%i ==0)
+                {
+                    answer[0] = i;
+                }
+            }
+
+            for (int i = mul; i >= min; i--)
+            {
+                if (i % n == 0 && i % m == 0)
+                {
+                    answer[1] = i;
+                }
+            }
 
 
+            Console.WriteLine($"최대공약수 : {answer[0]}, 최소공배수 : {answer[1]}");
+            return answer;
+        }
+
+        public static int Solution40(int n)
+        {
+            int answer = 0;
+            int count = 0;
+            int temp = n;
+            int division = 1;
+
+
+            while( temp > 3 )
+            {
+                temp = temp / 3;
+                count++;   
+            }
+
+            Console.WriteLine(count);
+
+            for (int i = 0; i < count; i++)
+            {
+                division = division * 3;
+            }
+
+            Console.WriteLine(division);
+
+            int[] arr = new int[count+1];
+
+            for (int i = 0; i <= count; i++)
+            {
+                if(n >= division*2)
+                {
+                    n -= division*2;
+                    division = division / 3;
+                    arr[i] = 2;
+                }
+                else if(n >= division)
+                {
+                    n -= division;
+                    division = division / 3;
+                    arr[i] = 1;
+                }
+                else
+                {
+                    arr[i] = 0;
+                }
+            }
+
+            for(int j  = 0; j <= count; j++)
+            {
+                Console.Write(arr[j]);
+            }
+
+            Console.WriteLine();
+
+            division = 1;
+
+            for (int i = 0; i <= count; i++)
+            {
+                if (arr[i] == 2)
+                {
+                    answer += division * 2;
+                    division *= 3;
+                }
+                else if (arr[i] == 1)
+                {
+                    answer += division;
+                    division *= 3;
+                }
+                else
+                {
+                    division *= 3;
+                }
+
+            }
 
 
             Console.WriteLine(answer);
             return answer;
         }
+
+
+
     }
 
 }

@@ -66,7 +66,8 @@ namespace CodeKata13
             //int[,] arr2 = new int[,] { { 3, 4 }, { 5, 6 } };
             //Level_40.Solution37(arr1, arr2);
             //Level_40.Solution38();
-            Level_40.Solution39(1, 2);
+            //Level_40.Solution39(2, 5);
+            Level_40.Solution40(125);
 
 
 
