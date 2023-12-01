@@ -67,9 +67,10 @@ namespace CodeKata13
             //Level_40.Solution37(arr1, arr2);
             //Level_40.Solution38();
             //Level_40.Solution39(2, 5);
-            Level_40.Solution40(125);
-
-
+            //Level_40.Solution40(125);
+            //Level_50.Solution41("try hello world");
+            int[] arr1 = { -3, -2, -1, 0, 1, 2, 3 };
+            Level_50.Solution42(arr1);
 
 
         }
