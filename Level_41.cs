@@ -60,5 +60,97 @@ namespace CodeKata13
             return answer;
         }
 
+        public static int Solution43(string t, string p)
+        {
+            int answer = 0;
+            int numt = 0;
+            int nump = 0;
+            nump = Int32.Parse(p);
+
+            for (int i = 0; i< t.Length-p.Length+1; i++)
+            {
+                numt = Int32.Parse(t.Substring(i, p.Length));
+                if (numt <= nump)
+                    answer++;
+            }
+
+
+
+            Console.WriteLine(answer);
+            return answer;
+        }
+
+        public static int Solution44(int[,] sizes)
+        {
+            int answer = 0;
+            int largebig = 0;
+            int smallbig = 0;
+            int temp = 0;
+            int length = sizes.GetLength(0);
+
+            for(int i = 0; i < length; i++)
+            {
+                if (sizes[i,0] < sizes[i,1])
+                {
+                    temp = sizes[i, 0];
+                    sizes[i,0] = sizes[i,1];
+                    sizes[i,1] = temp;
+                }
+
+                if (sizes[i,0] > largebig)
+                    largebig = sizes[i,0];
+
+                if (sizes[i, 1] > smallbig)
+                    smallbig = sizes[i,1];
+            }
+            Console.WriteLine(largebig);
+            Console.WriteLine(smallbig);
+
+            answer = largebig * smallbig;
+
+            Console.Write(answer);
+            return answer;
+        }
+
+        public static string Solution45(string s, int n)
+        {
+            string answer = "";
+            char alp = ' ';
+            int num = 0;
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                alp = s[i];
+                if(alp != ' ')
+                {
+                    num = (int)alp;
+                    if(num >= 65 && num <= 90)
+                    {
+                        num += n;
+                        if(num > 90)
+                           num -= 26;
+
+                    }
+                    else if (num >= 97 && num <= 122)
+                    {
+                        num += n;
+                        if (num > 122)
+                            num -= 26;
+
+                    }
+
+                    alp = (char)num;
+                    answer += alp;
+                }
+                else
+                    answer += alp;
+             
+            }
+
+            Console.WriteLine(answer);
+            return answer;
+        }
+
+
     }
 }
