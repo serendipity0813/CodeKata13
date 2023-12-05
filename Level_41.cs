@@ -152,5 +152,53 @@ namespace CodeKata13
         }
 
 
+        public static int Solution46(string s)
+        {
+            int answer = 0;
+            string ReplaceS= s.Replace("one", "1");
+            ReplaceS = ReplaceS.Replace("two", "2");
+            ReplaceS = ReplaceS.Replace("three", "3");
+            ReplaceS = ReplaceS.Replace("four", "4");
+            ReplaceS = ReplaceS.Replace("five", "5");
+            ReplaceS = ReplaceS.Replace("six", "6");
+            ReplaceS = ReplaceS.Replace("seven", "7");
+            ReplaceS = ReplaceS.Replace("eight", "8");
+            ReplaceS = ReplaceS.Replace("nine", "9");
+            ReplaceS = ReplaceS.Replace("zero", "0");
+            answer = Int32.Parse(ReplaceS);
+
+
+
+            Console.WriteLine(answer);
+            return answer;
+        }
+
+        public static string[] Solution47(string[] strings, int n)
+        {
+            string[] answer = new string[strings.Length];
+            string[] alp = new string[strings.Length];
+
+            Array.Sort(strings);
+
+            for(int i=0; i < strings.Length; i++)
+            {
+                alp[i] = strings[i][n] + strings[i];
+            }
+
+           Array.Sort(alp);
+
+            for (int i = 0; i < strings.Length; i++)
+            {
+                answer[i] = alp[i].Substring(1);
+            }
+
+            for (int i = 0; i < strings.Length; i++)
+            {
+                Console.WriteLine(answer[i]);
+            }
+
+            return answer;
+        }
+
     }
 }
