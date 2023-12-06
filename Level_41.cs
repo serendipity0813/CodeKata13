@@ -200,5 +200,75 @@ namespace CodeKata13
             return answer;
         }
 
+        public static int[] Solution48(int[] array, int[,] commands)
+        {
+
+            int col = commands.GetLength(1);
+            int[] answer = new int[col];
+
+            for (int i = 0; i<col; i++)
+            {
+                int length = commands[i,1] - commands[i,0] + 1;
+                int[] newarr = new int[length];
+                for(int j=0; j<length; j++)
+                {
+                    newarr[j] = array[j + commands[i,0]-1];
+                }
+
+                Array.Sort(newarr);
+
+                answer[i] = newarr[commands[i, 2] - 1];
+            }
+
+
+            for (int j = 0; j < answer.Length; j++)
+            {
+
+                Console.WriteLine(answer[j]);
+            }
+
+
+            return answer;
+        }
+
+        public static int[] Solution49(int[] numbers)
+        {
+            int mul = (numbers.Length-1) * (numbers.Length - 1);
+            int[] subanswer = new int[mul];
+            int count = 0;
+
+            Array.Sort(numbers);
+
+            for (int i = 0; i < numbers.Length-1; i++)
+            {               
+                for (int j = i+1; j < numbers.Length; j++)
+                {
+                    subanswer[count] = numbers[i] + numbers[j];
+                    count++;
+                }
+            }
+
+            int[] answer = subanswer.Distinct().ToArray();
+
+            for (int i = 0; i < answer.Length-1; i++)
+            {
+                Console.Write(answer[i]);
+            }
+
+            Console.WriteLine();
+            return answer;
+        }
+
+        public static int[] Solution50(string s)
+        {
+            int[] answer = new int[] { };
+
+
+
+
+
+            return answer;
+        }
+
     }
 }

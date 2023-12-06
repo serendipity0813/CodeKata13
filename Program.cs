@@ -76,9 +76,14 @@ namespace CodeKata13
             //Level_50.Solution44(arr1);
             //Level_50.Solution45("a B z  ", 4);
             //Level_50.Solution46("2three45sixseven");
-            string[] strings = { "abce", "abcd", "cdx" };
-            Level_50.Solution47(strings, 2);
-
+            //string[] strings = { "abce", "abcd", "cdx" };
+            //Level_50.Solution47(strings, 2);
+            //int[] arr = { 1, 5, 2, 6, 3, 7, 4 };
+            //int[,] commands = { { 2, 5, 3 }, { 4, 4, 1 }, { 1, 7, 3 } };
+            //Level_50.Solution48(arr, commands);
+            //int[] numbers = { 5,  0, 2, 7};
+            //Level_50.Solution49(numbers);
+            Level_50.Solution50("banana");
 
 
         }
