@@ -151,7 +151,6 @@ namespace CodeKata13
             return answer;
         }
 
-
         public static int Solution46(string s)
         {
             int answer = 0;
@@ -261,11 +260,25 @@ namespace CodeKata13
 
         public static int[] Solution50(string s)
         {
-            int[] answer = new int[] { };
+            int[] answer = new int[s.Length];
+            answer[0] = -1;
+            int num = 0;
 
-
-
-
+            for(int i=1; i<s.Length; i++)
+            {
+                num = -1;
+                for (int j = 0; j < i; j++)
+                {
+                    if (s[i] == s[j])
+                        num = i-j;
+                }
+                answer[i] = num;
+            }
+            for (int i = 0; i < s.Length; i++)
+            {
+                Console.Write(answer[i]);
+            }
+                
 
             return answer;
         }

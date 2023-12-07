@@ -54,6 +54,9 @@ namespace CodeKata13
             //int[] arr = {1, 4, 2, 8, 5, 7};
             //Level_30.Solution29(arr);
             //Level_30.Solution30("qwer");
+
+
+
             //Level_40.Solution31(11);
             //int[] arr1 = {1, 2, 3, 4 };
             //int[] arr2 = {-3, -1, 0, 2};
@@ -68,6 +71,9 @@ namespace CodeKata13
             //Level_40.Solution38();
             //Level_40.Solution39(2, 5);
             //Level_40.Solution40(125);
+
+
+
             //Level_50.Solution41("try hello world");
             //int[] arr1 = { -3, -2, -1, 0, 1, 2, 3 };
             //Level_50.Solution42(arr1);
@@ -83,8 +89,12 @@ namespace CodeKata13
             //Level_50.Solution48(arr, commands);
             //int[] numbers = { 5,  0, 2, 7};
             //Level_50.Solution49(numbers);
-            Level_50.Solution50("banana");
+            //Level_50.Solution50("foobar");
 
+
+            //int[] food = { 1, 3, 4, 6 };   
+            //Level_60.Solution51(food);
+            Level_60.Solution52(2, 1, 20);
 
         }
 
