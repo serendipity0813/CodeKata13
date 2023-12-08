@@ -94,7 +94,9 @@ namespace CodeKata13
 
             //int[] food = { 1, 3, 4, 6 };   
             //Level_60.Solution51(food);
-            Level_60.Solution52(2, 1, 20);
+            //Level_60.Solution52(5, 2, 20);
+            int[] arr = { 0, 300, 40, 300, 20, 70, 150, 50, 500, 1000 };
+            Level_60.Solution53(4, arr);
 
         }
 
