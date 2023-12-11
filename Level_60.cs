@@ -81,38 +81,21 @@ namespace CodeKata13
             int[] answer = new int[score.Length];
             int[] top = new int[k];
 
-            top[0] = score[0];
-            answer[0] = top[0];
+            int pivot = k - 1;
 
-
-            for(int i = 1; i < score.Length; i++)
+            for (int i = 0; i < score.Length; i++)
             {
-                for (int j = 0; j < k; j++)
-                {
-                    if (score[i] >= top[j])
-                    {
-                        if (j == 0)
-                        {
-                            top[j + 2] = top[j + 1];
-                            top[j + 1] = top[j];
-                            top[j] = score[i];
-                        }
-                        else if (j == 1)
-                        {
-                            top[j + 1] = top[j];
-                            top[j] = score[i];
-                        }
-                        else if (j == 2)
-                        {
-                            top[j] = score[i];
-                        }
 
-                        break;
 
-                    }
+                if (score[i] > top[0])
+                    top[0] = score[i];
 
-                }
-                    answer[i] = top[k-1];
+                Array.Sort(top);
+
+                answer[i] = top[pivot];
+
+                if (pivot > 0)
+                    pivot--;
 
             }
 
@@ -124,6 +107,117 @@ namespace CodeKata13
 
                 return answer;
         }
+
+        public static string Solution54(int a, int b)
+        {
+            string answer = "";
+            int num = -1;        //1일 부터 시작하므로
+
+            if(a > 1)
+            {
+                for (int i = 1; i < a; i++)
+                {
+                    if (i == 1 || i == 3 || i == 5 || i == 7 || i == 8 || i == 10 || i == 12)
+                        num += 31;
+                    else if (i == 2)
+                        num += 29;
+                    else
+                        num += 30;
+                }
+            }
+
+            num += b;
+            num = num % 7;
+
+            switch (num)
+            {
+                case 0:
+                answer = "FRI";
+                    break;
+                case 1:
+                    answer = "SAT";
+                    break;
+                case 2:
+                    answer = "SUN";
+                    break;
+                case 3:
+                    answer = "MON";
+                    break;
+                case 4:
+                    answer = "TUE";
+                    break;
+                case 5:
+                    answer = "WED";
+                    break;
+                case 6:
+                    answer = "THU";
+                    break;
+
+            }
+
+
+            Console.WriteLine(answer);
+            return answer;
+        }
+
+
+        public static string Solution55(string[] cards1, string[] cards2, string[] goal)
+        {
+            string answer = "";
+            int count1 = 0;
+            int count2 = 0;
+
+            for(int i = 0; i < goal.Length; i++)
+            {
+                if (goal[i] == cards1[count1])
+                {
+                    if(count1 < cards1.Length-1)
+                    count1++;
+                }
+
+                else if (goal[i] == cards2[count2])
+                {
+
+                    if (count2 < cards2.Length - 1)
+                        count2++;
+                }
+                 
+                else
+                {
+                    answer = "NO";
+                    break;
+                }
+                    
+                   
+            }
+
+            if (answer != "NO")
+                answer = "YES";
+
+            Console.WriteLine(answer);
+            return answer;
+        }
+
+        public static int Solution56(int k, int m, int[] score)
+        {
+            int answer = 0;
+            int price = 0;
+
+            Array.Sort(score);
+            Array.Reverse(score);
+
+            for(int j=1; j< score.Length / m + 1; j++)
+            {
+                price = score[j*m-1] * m;
+                answer += price;
+            }
+
+
+
+            Console.WriteLine(answer);
+            return answer;
+        }
+
 
     }
 }

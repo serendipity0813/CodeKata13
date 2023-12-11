@@ -95,8 +95,16 @@ namespace CodeKata13
             //int[] food = { 1, 3, 4, 6 };   
             //Level_60.Solution51(food);
             //Level_60.Solution52(5, 2, 20);
-            int[] arr = { 0, 300, 40, 300, 20, 70, 150, 50, 500, 1000 };
-            Level_60.Solution53(4, arr);
+            //int[] arr = { 0, 300, 40, 300, 20, 70, 150, 50, 500, 1000 };
+            //Level_60.Solution53(4, arr);
+            //Level_60.Solution54(5, 24);
+            //string[] card1 = {"i","water","drink" };
+            //string[] card2 = { "want", "to"};
+            //string[] goal = { "i", "want", "to", "drink", "water" };
+            //Level_60.Solution55(card1, card2, goal);
+            int[] score = { 4, 1, 2, 2, 4, 4, 4, 4, 1, 2, 4, 2 };
+            Level_60.Solution56(4, 3, score);
+
 
         }
 
