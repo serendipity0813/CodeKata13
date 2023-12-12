@@ -218,6 +218,107 @@ namespace CodeKata13
             return answer;
         }
 
+        public static int[] Solution57(int[] answers)
+        {
+            int[] count = new int[3];
+            int[] pivot = new int[3];
+            int[] member1 = { 1, 2, 3, 4, 5 };
+            int[] member2 = { 2, 1, 2, 3, 2, 4, 2, 5 };
+            int[] member3 = { 3, 3, 1, 1, 2, 2, 4, 4, 5, 5 };
+            int length = 1;
+            int high = 0;
+            int flag = 0;
+
+            for (int i=0; i<answers.Length; i++)
+            {
+                if (answers[i] == member1[i% 5])
+                    count[0]++;
+
+                if (answers[i] == member2[i% 8])
+                    count[1]++;
+
+                if (answers[i] == member3[i% 10])
+                    count[2]++;
+
+            }
+
+            for (int i = 0; i < count.Length; i++)
+            {
+                if (count[i] > high)
+                {
+                    high = count[i];
+                    for(int j=0; j<pivot.Length; j++)
+                    {
+                        if (j == i)
+                            pivot[j] = j + 1;
+                        else
+                            pivot[j] = 0;
+                    }
+                    length = 1;
+                }
+                else if (count[i] == high)
+                {
+                    pivot[i] = i + 1;
+                    length++;
+                }
+
+            }
+
+            int[] answer = new int[length];
+
+            for (int i = 0; i < pivot.Length; i++)
+            {
+                if (pivot[i] != 0)
+                {
+                    answer[flag] = pivot[i];
+                    flag++;
+                }
+            }
+
+
+            for (int j = 0; j <length; j++)
+            {
+                Console.WriteLine(answer[j]);
+            }
+
+            return answer;
+
+        }
+
+        public static int Solution58(int[] nums)
+        {
+            int answer = 0;
+            int number = 0;
+            int count = 0;
+
+            for(int i = 0; i<nums.Length-3; i++)
+            {
+                for (int j = 1; j < nums.Length - 2; j++)
+                {
+                    for (int k = 2; j < nums.Length - 2; k++)
+                    {
+                        number = nums[i] + nums[j] + nums[k];
+
+                        for(int p = 2; p < number/2; p++)
+                        {
+                            if (number % p == 0)
+                                count++;
+                        }
+
+                        if (count != 0)
+                        {
+                            answer++;
+                            count = 0;
+                        }
+                          
+                    }
+                }
+            }
+
+
+            Console.WriteLine(answer);
+            return answer;
+        }
 
     }
 }

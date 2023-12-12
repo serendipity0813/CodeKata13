@@ -102,14 +102,17 @@ namespace CodeKata13
             //string[] card2 = { "want", "to"};
             //string[] goal = { "i", "want", "to", "drink", "water" };
             //Level_60.Solution55(card1, card2, goal);
-            int[] score = { 4, 1, 2, 2, 4, 4, 4, 4, 1, 2, 4, 2 };
-            Level_60.Solution56(4, 3, score);
+            //int[] score = { 4, 1, 2, 2, 4, 4, 4, 4, 1, 2, 4, 2 };
+            //Level_60.Solution56(4, 3, score);
+            //int[] answers = {1,3,2,4,2};
+            //Level_60.Solution57(answers);
+            int[] nums = { 1, 2, 3, 4};
+            Level_60.Solution58(nums);
+
+
 
 
         }
-
-
-
 
     }
 }
