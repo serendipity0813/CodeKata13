@@ -289,29 +289,56 @@ namespace CodeKata13
         {
             int answer = 0;
             int number = 0;
+            double root = 0;
             int count = 0;
 
-            for(int i = 0; i<nums.Length-3; i++)
+            for(int i=0; i<= nums.Length-3; i++)
             {
-                for (int j = 1; j < nums.Length - 2; j++)
+                for (int j = i+1; j <= nums.Length - 2; j++)
                 {
-                    for (int k = 2; j < nums.Length - 2; k++)
+                    for (int k = j+1; k <= nums.Length - 1; k++)
                     {
+                        count = 0;
                         number = nums[i] + nums[j] + nums[k];
+                        root = Math.Sqrt(number);
 
-                        for(int p = 2; p < number/2; p++)
+                        for (int p = 2; p <= root; p++)
                         {
                             if (number % p == 0)
+                            {
                                 count++;
+                                break;
+                            }
+ 
                         }
 
-                        if (count != 0)
+                        if (count == 0)
                         {
+                            Console.WriteLine(number);
                             answer++;
-                            count = 0;
                         }
-                          
+                           
                     }
+                }
+            }
+
+
+
+            Console.WriteLine(answer);
+            return answer;
+        }
+
+        public static int Solution59(int n, int m, int[] section)
+        {
+            int answer = 1;
+            int pivot = section[0];
+
+            for(int i=1; i<section.Length; i++)
+            {
+                if (section[i] > pivot + m-1)
+                {
+                    pivot = section[i];
+                    answer++;
                 }
             }
 

@@ -106,8 +106,10 @@ namespace CodeKata13
             //Level_60.Solution56(4, 3, score);
             //int[] answers = {1,3,2,4,2};
             //Level_60.Solution57(answers);
-            int[] nums = { 1, 2, 3, 4};
-            Level_60.Solution58(nums);
+            //int[] nums = { 1, 2, 7, 6, 4 };
+            //Level_60.Solution58(nums);
+            int[] section = { 2, 3, 6};
+            Level_60.Solution59(8, 4, section);
 
 
 
