@@ -44,15 +44,60 @@ namespace CodeKata13
         public static int Solution62(string[] babbling)
         {
             int answer = 0;
+            int num = 0;
             string[] words = { "aya", "ye", "woo", "ma" };
 
             for (int i = 0; i < babbling.Length; i++)
             {
-                babbling[i] = babbling[i].Replace(words[i], " ");
+                for(int j=0; j < words.Length; j++)
+                {
+                    babbling[i] = babbling[i].Replace(words[j], $"{j}");
+                    babbling[i] = babbling[i].Replace($"{j}{j}", $"{j}" + words[j]);
+                }
+  
+
+                if(int.TryParse(babbling[i], out num) == true )
+                    answer++; 
                 Console.WriteLine(babbling[i]);
             }
 
+            Console.WriteLine(answer);
+            return answer;
+        }
 
+        public static string Solution63(string X, string Y)
+        {
+            string answer = "";
+            int[] countArr = new int[10];
+            int check1 = 0;
+            int check2 = 0;
+            
+
+            for(int i = 0; i<10; i++)
+            {
+                //이부분 고쳐야함 (특정숫자 갯수 체크하도록)
+                char flag = (char)i;             
+                check1 = X.Count( f=> ( f == flag));
+                check2 = Y.Count( f => (f == flag));
+                if(check1 > check2)
+                    countArr[i] = check1;
+                else if(check1 < check2)
+                    countArr[i] = check2;
+                Console.Write(countArr[i]);
+            }
+
+            for(int i = 9; i >= 0 ; i--)
+            {
+                if (countArr[i] > 0)
+                {
+                    for (int j = 0; j < countArr[i]; j++)
+                    {
+                        answer += $"{i}";
+                    }
+                }
+            }
+
+            Console.Write(answer);
             return answer;
         }
 
