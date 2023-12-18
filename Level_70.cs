@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CodeKata13
 {
@@ -68,34 +64,69 @@ namespace CodeKata13
         public static string Solution63(string X, string Y)
         {
             string answer = "";
-            int[] countArr = new int[10];
+            int[] xarray = new int[X.Length];
+            int[] yarray = new int[Y.Length];
+            int[] countarr = new int[10];
             int check1 = 0;
             int check2 = 0;
-            
 
-            for(int i = 0; i<10; i++)
+            for (int i=0; i < X.Length; i++)
             {
-                //이부분 고쳐야함 (특정숫자 갯수 체크하도록)
-                char flag = (char)i;             
-                check1 = X.Count( f=> ( f == flag));
-                check2 = Y.Count( f => (f == flag));
-                if(check1 > check2)
-                    countArr[i] = check1;
-                else if(check1 < check2)
-                    countArr[i] = check2;
-                Console.Write(countArr[i]);
+                xarray[i] = (int)Char.GetNumericValue(X[i]);
+                Console.Write(xarray[i]);
+            }
+            Console.WriteLine();
+            for (int i = 0; i < Y.Length; i++)
+            {
+                yarray[i] = (int)Char.GetNumericValue(Y[i]);
+                Console.Write(yarray[i]);
+            }
+            Console.WriteLine();
+
+            Array.Sort(xarray);
+            Array.Sort(yarray);
+
+
+
+            for(int i = 0; i < 10; i++)
+            {
+                check1 = 0;
+                check2 = 0;
+
+                for (int j = 0; j < X.Length; j++)
+                {
+                    if (xarray[j] == i)
+                        check1++;
+                }
+
+                for (int j = 0; j < X.Length; j++)
+                {
+                    if (yarray[j] == i)
+                        check2++;
+                }
+
+                if (check1 > check2)
+                    countarr[i] = check2;
+                else if (check2 > check1)
+                    countarr[i] = check1;
+                else if(check1 == check2)
+                    countarr[i] = check1;
+                else
+                    countarr[i] = -1;
+
+                Console.Write(countarr[i]);
             }
 
-            for(int i = 9; i >= 0 ; i--)
+            Console.WriteLine();
+
+            for(int i = countarr.Length -1; i > 0; i--)
             {
-                if (countArr[i] > 0)
+                for(int j = 0; j < countarr[i]; j++)
                 {
-                    for (int j = 0; j < countArr[i]; j++)
-                    {
-                        answer += $"{i}";
-                    }
+                    answer += i;
                 }
             }
+
 
             Console.Write(answer);
             return answer;

@@ -117,7 +117,7 @@ namespace CodeKata13
             //Level_70.Solution61(lottos, win_nums);
             //string[] babbling = { "ayaye", "uuu", "yeye", "yemawoo", "ayaayaa" };
             //Level_70.Solution62(babbling);
-            Level_70.Solution63("100", "2345");
+            Level_70.Solution63("5525", "1255");
 
 
         }
