@@ -111,14 +111,15 @@ namespace CodeKata13
                     num = i;
             }
 
-            answer = $"김서방은 {num} 에 있다";
+            answer = $"김서방은 {num}에 있다";
 
 
             Console.WriteLine(answer);
 
             return answer;
         }
-
+        
+        //다시 풀어야 함
         public static int[] Solution25(int[] arr, int divisor)
         {
 

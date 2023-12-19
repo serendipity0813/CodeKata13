@@ -25,10 +25,10 @@ namespace CodeKata13
 
         }
 
-        public static float Solution12(int[] arr)
+        public static double Solution12(int[] arr)
         {
             int sum = 0;
-            int average = 0;
+            double average = 0;
 
             if (arr.Length <= 0)
             {
@@ -50,7 +50,7 @@ namespace CodeKata13
                 }
 
                 if (arr.Length != 0)
-                    average = sum / arr.Length;
+                    average = (double)sum / arr.Length;
 
 
                 Console.Write("입력배열 : [ ");
@@ -69,6 +69,7 @@ namespace CodeKata13
 
         }
 
+        //다시 풀어야 함
         public static int Solution13(int num)
         {
             int answer = 0;
@@ -161,9 +162,10 @@ namespace CodeKata13
             return answer;
         }
 
+        //다시 풀어야 함
         public static long[] Solution16(int x, int n)
         {
-            long[] answer = new long[1000];
+            long[] answer = new long[n];
 
             for(int i=1; i <= n; i++)
             {
@@ -179,6 +181,7 @@ namespace CodeKata13
             return answer;
         }
 
+        //다시 풀어야 함
         public static int[] Solution17(long n)
         {
             int[] answer = new int[12];
@@ -191,7 +194,8 @@ namespace CodeKata13
                 count++;
             }
 
-            for(int i=0; i<count; i++)
+
+            for (int i=0; i<count; i++)
             {
                 Console.Write(answer[i]);
             }
@@ -200,6 +204,7 @@ namespace CodeKata13
             return answer;
         }
 
+        //다시 풀어야 함
         public static int Solution18(string s)
         {
             int answer = 0;
@@ -213,6 +218,7 @@ namespace CodeKata13
 
         }
 
+        //다시 풀어야 함
         public static int Solution19(int n)
         {
             int answer = 0;
@@ -242,6 +248,7 @@ namespace CodeKata13
             return answer;
         }
 
+        //다시 풀어야 함
         public static long Solution20(long n)
         {
             long answer = 0;

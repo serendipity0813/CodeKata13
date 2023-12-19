@@ -109,10 +109,11 @@ namespace CodeKata13
                     countarr[i] = check2;
                 else if (check2 > check1)
                     countarr[i] = check1;
-                else if(check1 == check2)
-                    countarr[i] = check1;
-                else
+                else if(check1 == check2 && check1 == 0)
                     countarr[i] = -1;
+                else
+                    countarr[i] = check1;
+          
 
                 Console.Write(countarr[i]);
             }
@@ -131,6 +132,86 @@ namespace CodeKata13
             Console.Write(answer);
             return answer;
         }
+
+        public static int Solution64(int n, int[] lost, int[] reserve)
+        {
+            int answer = 0;
+
+            int[] students = new int[n];
+
+            for(int i = 0; i < n; i++)
+            {
+                students[i] = 1;
+
+                for(int j = 0; j<lost.Length; j++)
+                {
+                    if (i == lost[j] - 1)
+                        students[i]--; 
+                }
+
+                for (int k = 0; k < reserve.Length; k++)
+                {
+                    if (i == reserve[k] - 1)
+                        students[i]++;
+                }            
+
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(students[i]);
+            }
+            Console.WriteLine();
+
+            for (int i = 0; i < n; i++)
+            {
+                if (students[i] == 0)
+                {
+                    if (i == 0)
+                    {
+                        if (students[i + 1] == 2)
+                        {
+                            students[i]++;
+                            students[i + 1]--;
+                        }
+                    }
+                    else if (i == n - 1)
+                    {
+                        if (students[i - 1] == 2)
+                        {
+                            students[i]++;
+                            students[i - 1]--;
+                        }
+                    }
+                    else
+                    {
+                        if (students[i + 1] == 2)
+                        {
+                            students[i]++;
+                            students[i + 1]--;
+                        }
+                        else if (students[i - 1] == 2)
+                        {
+                            students[i]++;
+                            students[i - 1]--;
+                        }
+                    }
+
+                }
+
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                if (students[i] > 0)
+                    answer++;
+            }
+
+            Console.WriteLine(answer);
+            return answer;
+
+        }
+
 
     }
 }
