@@ -73,6 +73,7 @@ namespace CodeKata13
 
         }
 
+        //array함수 오류
         public static string Solution34(string s)
         {
             string answer = "";
@@ -96,7 +97,7 @@ namespace CodeKata13
 
         }
 
-
+        //다시 풀어야함 (test 실패)
         public static long Solution35(int price, int money, int count)
         {
             int answer = 0;
@@ -227,6 +228,7 @@ namespace CodeKata13
             return answer;
         }
 
+        //다시 풀어야 함
         public static int Solution40(int n)
         {
             int answer = 0;

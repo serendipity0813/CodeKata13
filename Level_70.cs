@@ -4,6 +4,7 @@ namespace CodeKata13
 {
     internal class Level_70
     {
+        //다시풀기
         public static int[] Solution61(int[] lottos, int[] win_nums)
         {
             int[] answer = new int[2];
@@ -61,6 +62,7 @@ namespace CodeKata13
             return answer;
         }
 
+        //다시 풀기 예시틀림
         public static string Solution63(string X, string Y)
         {
             string answer = "";
@@ -133,6 +135,7 @@ namespace CodeKata13
             return answer;
         }
 
+        //test 케이스 몇개 틀림
         public static int Solution64(int n, int[] lost, int[] reserve)
         {
             int answer = 0;
@@ -212,6 +215,46 @@ namespace CodeKata13
 
         }
 
+        //다시풀기
+        public static int Solution65(string s)
+        {
+            int answer = 0;
+            char start = ' ';
+            int same = 0;
+            int differ = 0;
+            bool flag = true;
 
+            for(int i=0; i<s.Length; i++)
+            {
+                if(flag)
+                {
+                    start = s[i];
+                    same = 1;
+                    differ = 0;
+                    flag = false;
+                    if (i == s.Length - 1)
+                        answer++;
+                }
+
+                else
+                {
+                    if (s[i] == start)
+                        same++;
+                    else
+                        differ++;
+
+                    if(same == differ)
+                    {
+                        flag = true;
+                        answer++;
+                    }
+
+                }
+            }
+
+
+            Console.WriteLine(answer);
+            return answer;
+        }
     }
 }

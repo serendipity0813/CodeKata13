@@ -8,6 +8,7 @@ namespace CodeKata13
 {
     internal class Level_50
     {
+        //다시풀기
         public static string Solution41(string s)
         {
             string answer = "";
@@ -60,6 +61,7 @@ namespace CodeKata13
             return answer;
         }
 
+        //런타임에러
         public static int Solution43(string t, string p)
         {
             int answer = 0;
@@ -171,7 +173,7 @@ namespace CodeKata13
             Console.WriteLine(answer);
             return answer;
         }
-
+       
         public static string[] Solution47(string[] strings, int n)
         {
             string[] answer = new string[strings.Length];
@@ -199,6 +201,7 @@ namespace CodeKata13
             return answer;
         }
 
+        //다시풀기
         public static int[] Solution48(int[] array, int[,] commands)
         {
 
@@ -230,6 +233,7 @@ namespace CodeKata13
             return answer;
         }
 
+        //다시풀기
         public static int[] Solution49(int[] numbers)
         {
             int mul = (numbers.Length-1) * (numbers.Length - 1);

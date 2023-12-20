@@ -163,39 +163,39 @@ namespace CodeKata13
 
         public static string Solution55(string[] cards1, string[] cards2, string[] goal)
         {
-            string answer = "";
-            int count1 = 0;
-            int count2 = 0;
+                string answer = "";
+                int count1 = 0;
+                int count2 = 0;
 
-            for(int i = 0; i < goal.Length; i++)
-            {
-                if (goal[i] == cards1[count1])
+                for(int i = 0; i < goal.Length; i++)
                 {
-                    if(count1 < cards1.Length-1)
-                    count1++;
-                }
+                    if (goal[i] == cards1[count1])
+                    {
+                        if(count1 < cards1.Length-1)
+                        count1++;
+                    }
 
-                else if (goal[i] == cards2[count2])
-                {
+                    else if (goal[i] == cards2[count2])
+                    {
 
-                    if (count2 < cards2.Length - 1)
-                        count2++;
-                }
+                        if (count2 < cards2.Length - 1)
+                            count2++;
+                    }
                  
-                else
-                {
-                    answer = "NO";
-                    break;
-                }
+                    else
+                    {
+                        answer = "No";
+                        break;
+                    }
                     
                    
-            }
+                }
 
-            if (answer != "NO")
-                answer = "YES";
+                if (answer != "No")
+                    answer = "Yes";
 
-            Console.WriteLine(answer);
-            return answer;
+                Console.WriteLine(answer);
+                return answer;
         }
 
         public static int Solution56(int k, int m, int[] score)
@@ -347,7 +347,7 @@ namespace CodeKata13
             return answer;
         }
 
-
+        //다시 풀기
         public static int Solution60(int number, int limit, int power)
         {
             int answer = 0;
