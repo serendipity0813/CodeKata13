@@ -69,53 +69,19 @@ namespace CodeKata13
 
         }
 
-        //다시 풀어야 함
         public static int Solution13(int num)
         {
             int answer = 0;
-            int[] arr = new int[6];
+            int[] arr = new int[10];
 
-            if (num >= 100000)
+
+            for(int i=0; i<10; i++)
             {
-                arr[0] = num / 100000;
-                num -= arr[0] * 100000;
+                arr[i] = num % 10;
+                num = num / 10;
+                Console.WriteLine(num);
             }
-            else
-                arr[0] = 0;
 
-            if (num >= 10000)
-            {
-                arr[1] = num / 10000;
-                num -= arr[1] * 10000;
-            }
-            else
-                arr[1] = 0;
-
-            if (num >= 1000)
-            {
-                arr[2] = num / 1000;
-                num -= arr[2] * 1000;
-            }
-            else
-                arr[2] = 0;
-
-            if (num >= 100)
-            {
-                arr[3] = num / 100;
-                num -= arr[3] * 100;
-            }
-            else
-                arr[3] = 0;
-
-            if (num >= 10)
-            {
-                arr[4] = num / 10;
-                num -= arr[4] * 10;
-            }
-            else
-                arr[4] = 0;
-
-            arr[5] = num;
 
             for(int i=0; i<arr.Length; i++)
             {
@@ -162,14 +128,13 @@ namespace CodeKata13
             return answer;
         }
 
-        //다시 풀어야 함
         public static long[] Solution16(int x, int n)
         {
             long[] answer = new long[n];
 
             for(int i=1; i <= n; i++)
             {
-                answer[i - 1] = x * i;
+                answer[i - 1] = x * (long)i;
             }
 
             for(int j=0; j<n; j++)
@@ -181,30 +146,30 @@ namespace CodeKata13
             return answer;
         }
 
-        //다시 풀어야 함
         public static int[] Solution17(long n)
         {
-            int[] answer = new int[12];
+            int[] check = new int[12];
             int count = 0;
 
             while(n>0)
             {
-                answer[count] = (int)n % 10;
+                check[count] = (int)(n % 10);
                 n = n / 10;
                 count++;
             }
 
+            int[] answer = new int[count];
 
             for (int i=0; i<count; i++)
             {
-                Console.Write(answer[i]);
+                answer[i] = check[i];
+                Console.WriteLine(answer[i]);
             }
 
 
             return answer;
         }
 
-        //다시 풀어야 함
         public static int Solution18(string s)
         {
             int answer = 0;
@@ -218,20 +183,22 @@ namespace CodeKata13
 
         }
 
-        //다시 풀어야 함
-        public static int Solution19(int n)
+     
+        public static long Solution19(int n)
         {
-            int answer = 0;
+            long answer = 0;
             int root = 1;
+            long squ = 0;
 
             while(true)
             {
-                if (n / root == root && n % root == 0)
+                squ = (long) root * root;
+                if (n ==squ)
                 {
-                    answer = (root + 1) * (root + 1);
+                    answer = (long)(root + 1) * (root + 1);
                     break;
                 }
-                else if(root*root>n) 
+                else if(squ>n) 
                 {
                     answer = -1;
                     break;
@@ -248,40 +215,38 @@ namespace CodeKata13
             return answer;
         }
 
-        //다시 풀어야 함
         public static long Solution20(long n)
         {
             long answer = 0;
             int count = 0;
-            int temp = 0;
             int[] nums = new int[10];
+
             while(n> 0)
             {
-                    nums[count] = (int)n % 10;
+                    nums[count] = (int)(n % 10);
                     n = n / 10;
                     count++;
             }
 
-            for(int i=0; i < count; i++)
+            for (int i = 0; i < nums.Length; i++)
             {
-                for(int  j=1; j < count; j++)
-                {
-                    if (nums[i] < nums[j])
-                    {
-                        temp = nums[i];
-                        nums[i] = nums[j];
-                        nums[j] = temp;
-                    }
-                }
+
+                Console.Write(nums[i]);
             }
 
-            for( int i=0; i < count-1; i++)
+            Console.WriteLine();
+
+            Array.Sort(nums);
+            Array.Reverse(nums);
+
+            for ( int i=0; i < count; i++)
             {
                 answer = answer + nums[i];
                 answer = answer * 10;
+                Console.WriteLine(answer);
             }
 
-            Console.WriteLine(answer);
+            answer = answer / 10;
 
             return answer;
         }

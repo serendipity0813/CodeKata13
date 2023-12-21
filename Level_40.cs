@@ -72,18 +72,13 @@ namespace CodeKata13
             return answer;
 
         }
-
-        //array함수 오류
         public static string Solution34(string s)
         {
             string answer = "";
-            string[] word = new string[s.Length];
+            char[] word = s.ToCharArray();
 
-            for (int i = 0; i < s.Length; i++)
-            {
-                word[i] = s.Substring(i, 1);
-            }
-
+       
+            Array.Sort(word);
             Array.Reverse(word);
 
             for (int i = 0; i < s.Length; i++)
@@ -97,11 +92,11 @@ namespace CodeKata13
 
         }
 
-        //다시 풀어야함 (test 실패)
+
         public static long Solution35(int price, int money, int count)
         {
-            int answer = 0;
-            int sum = 0;
+            long answer = 0;
+            long sum = 0;
 
             for (int i = 1; i <= count; i++)
             {
@@ -237,7 +232,7 @@ namespace CodeKata13
             int division = 1;
 
 
-            while( temp > 3 )
+            while ( temp > 3 )
             {
                 temp = temp / 3;
                 count++;   

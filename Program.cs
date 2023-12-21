@@ -28,7 +28,7 @@ namespace CodeKata13
             //Level_20.Solution1(13);
             //int[] problem2 = { 1, 2, 3, 4 };
             //Level_20.Solution12(problem2);
-            //Level_20.Solution13(930211);
+            //Level_20.Solution13(987);
             //Level_20.Solution14(16);
             //Level_20.Solution15(10);
             //Level_20.Solution16(2, 5);
@@ -121,7 +121,7 @@ namespace CodeKata13
             //int[] lost = { 2, 4 };
             //int[] reserve= { 3 };
             //Level_70.Solution64(5, lost, reserve);
-            Level_70.Solution65("aaabbaccccabba");
+            //Level_70.Solution65("aaabbaccccabba");
 
         }
 

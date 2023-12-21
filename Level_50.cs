@@ -8,7 +8,6 @@ namespace CodeKata13
 {
     internal class Level_50
     {
-        //다시풀기
         public static string Solution41(string s)
         {
             string answer = "";
@@ -27,9 +26,9 @@ namespace CodeKata13
                     answer += s[j].ToString().ToUpper();
                     length++;
                 }
-                else
+                else if (length % 2 ==1)
                 {
-                    answer += s[j].ToString();
+                    answer += s[j].ToString().ToLower();
                     length++;
                 }
 
@@ -61,17 +60,16 @@ namespace CodeKata13
             return answer;
         }
 
-        //런타임에러
         public static int Solution43(string t, string p)
         {
             int answer = 0;
-            int numt = 0;
-            int nump = 0;
-            nump = Int32.Parse(p);
+            long numt = 0;
+            long nump = 0;
+            nump = Int64.Parse(p);
 
             for (int i = 0; i< t.Length-p.Length+1; i++)
             {
-                numt = Int32.Parse(t.Substring(i, p.Length));
+                numt = Int64.Parse(t.Substring(i, p.Length));
                 if (numt <= nump)
                     answer++;
             }
@@ -210,11 +208,15 @@ namespace CodeKata13
 
             for (int i = 0; i<col; i++)
             {
-                int length = commands[i,1] - commands[i,0] + 1;
+                int start = commands[i, 0];
+                int end = commands[i, 1];
+
+                int length = end - start + 1;
                 int[] newarr = new int[length];
+
                 for(int j=0; j<length; j++)
                 {
-                    newarr[j] = array[j + commands[i,0]-1];
+                    newarr[j] = array[j + start-1];
                 }
 
                 Array.Sort(newarr);
@@ -239,6 +241,7 @@ namespace CodeKata13
             int mul = (numbers.Length-1) * (numbers.Length - 1);
             int[] subanswer = new int[mul];
             int count = 0;
+            int flag = 0;
 
             Array.Sort(numbers);
 
@@ -246,16 +249,29 @@ namespace CodeKata13
             {               
                 for (int j = i+1; j < numbers.Length; j++)
                 {
-                    subanswer[count] = numbers[i] + numbers[j];
-                    count++;
+                    flag = 0;
+                    for(int k = 0; k<numbers.Length; k++)
+                    {
+                        if (subanswer[k] == numbers[j] + numbers[i])
+                            flag++;
+                    }
+                    if (flag == 0)
+                    {
+                        subanswer[count] = numbers[i] + numbers[j];
+                        count++;
+                    }
+
                 }
             }
 
-            int[] answer = subanswer.Distinct().ToArray();
+            int[] answer = new int[count];
 
-            for (int i = 0; i < answer.Length-1; i++)
+
+
+            for (int i = 0; i < answer.Length; i++)
             {
-                Console.Write(answer[i]);
+                answer[i] = subanswer[i];
+                Console.WriteLine(answer[i]);
             }
 
             Console.WriteLine();

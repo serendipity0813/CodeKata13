@@ -119,7 +119,6 @@ namespace CodeKata13
             return answer;
         }
         
-        //다시 풀어야 함 (sort 인식하도록)
         public static int[] Solution25(int[] arr, int divisor)
         {
 
