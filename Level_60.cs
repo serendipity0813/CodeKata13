@@ -348,23 +348,45 @@ namespace CodeKata13
         }
 
         //다시 풀기
-        public static int Solution60(int number, int limit, int power)
+        public static long Solution60(int number, int limit, int power)
         {
-            int answer = 0;
-            int count = 0;
+            long answer = 0;
+            long count = 0;
+            int root = 0;
 
             for(int i=1; i<=number; i++)
             {
                 count = 0;
-                for(int j=1; j<=i; j++)
+                root = 0;
+
+                for (int j = 1; j <= i; j++)
                 {
-                    if (i % j == 0)
-                        count++;
+                    if (j * j >= i)
+                    {
+                        root = j;
+                        break;
+                    }
+                   
+
                 }
+
+
+
+                for (int j=1; j<=root; j++)
+                {
+                    if (i == j * j)
+                        count++;
+                    else if (i % j == 0)
+                        count += 2;
+                }
+
+                Console.WriteLine(root + " " + count);
+
                 if (count > limit)
                     answer += power;
                 else
                     answer += count;
+
             }
 
 

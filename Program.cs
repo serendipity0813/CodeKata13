@@ -85,9 +85,9 @@ namespace CodeKata13
             //string[] strings = { "abce", "abcd", "cdx" };
             //Level_50.Solution47(strings, 2);
             //int[] arr = { 1, 5, 2, 6, 3, 7, 4 };
-            //int[,] commands = { { 2, 5, 3 }, { 4, 4, 1 }, { 1, 7, 3 } };
+            //int[,] commands = { { 2, 5, 3 }, { 4, 4, 1 }, { 1, 7, 3 }, { 3, 6, 2 } };
             //Level_50.Solution48(arr, commands);
-            //int[] numbers = { 5,  0, 2, 7};
+            //int[] numbers = { 2, 1, 3, 4, 1};
             //Level_50.Solution49(numbers);
             //Level_50.Solution50("foobar");
 
@@ -110,7 +110,7 @@ namespace CodeKata13
             //Level_60.Solution58(nums);
             //int[] section = { 2, 3, 6};
             //Level_60.Solution59(8, 4, section);
-            //Level_60.Solution60(10, 3, 2);
+            Level_60.Solution60(10, 3, 2);
 
             //int[] win_nums = { 31, 10, 45, 1, 6, 19 };
             //int[] lottos= { 44, 1, 0, 0, 31, 25 };

@@ -72,6 +72,7 @@ namespace CodeKata13
             return answer;
 
         }
+
         public static string Solution34(string s)
         {
             string answer = "";
@@ -223,83 +224,39 @@ namespace CodeKata13
             return answer;
         }
 
-        //다시 풀어야 함
         public static int Solution40(int n)
         {
             int answer = 0;
             int count = 0;
             int temp = n;
-            int division = 1;
 
-
-            while ( temp > 3 )
+            while(temp > 0)
             {
                 temp = temp / 3;
-                count++;   
+                count++;
             }
 
-            Console.WriteLine(count);
+            int[] arr = new int[count];
 
-            for (int i = 0; i < count; i++)
+            for(int i=0; i<count; i++)
             {
-                division = division * 3;
+                arr[i] = n % 3;
+                n = n / 3;
             }
 
-            Console.WriteLine(division);
 
-            int[] arr = new int[count+1];
+            temp = 1;
 
-            for (int i = 0; i <= count; i++)
+            for (int i = count-1; i >= 0; i--)
             {
-                if(n >= division*2)
-                {
-                    n -= division*2;
-                    division = division / 3;
-                    arr[i] = 2;
-                }
-                else if(n >= division)
-                {
-                    n -= division;
-                    division = division / 3;
-                    arr[i] = 1;
-                }
-                else
-                {
-                    arr[i] = 0;
-                }
-            }
-
-            for(int j  = 0; j <= count; j++)
-            {
-                Console.Write(arr[j]);
-            }
-
-            Console.WriteLine();
-
-            division = 1;
-
-            for (int i = 0; i <= count; i++)
-            {
-                if (arr[i] == 2)
-                {
-                    answer += division * 2;
-                    division *= 3;
-                }
-                else if (arr[i] == 1)
-                {
-                    answer += division;
-                    division *= 3;
-                }
-                else
-                {
-                    division *= 3;
-                }
-
+                answer += arr[i] * temp;
+                temp = temp * 3;
             }
 
 
             Console.WriteLine(answer);
             return answer;
+
         }
 
 

@@ -199,11 +199,10 @@ namespace CodeKata13
             return answer;
         }
 
-        //다시풀기
         public static int[] Solution48(int[] array, int[,] commands)
         {
 
-            int col = commands.GetLength(1);
+            int col = commands.GetLength(0);
             int[] answer = new int[col];
 
             for (int i = 0; i<col; i++)
@@ -211,7 +210,9 @@ namespace CodeKata13
                 int start = commands[i, 0];
                 int end = commands[i, 1];
 
+
                 int length = end - start + 1;
+
                 int[] newarr = new int[length];
 
                 for(int j=0; j<length; j++)
@@ -222,60 +223,38 @@ namespace CodeKata13
                 Array.Sort(newarr);
 
                 answer[i] = newarr[commands[i, 2] - 1];
+
             }
 
-
-            for (int j = 0; j < answer.Length; j++)
+            for(int j=0; j<answer.Length; j++)
             {
-
-                Console.WriteLine(answer[j]);
+                Console.Write(answer[j]);
             }
-
 
             return answer;
         }
 
-        //다시풀기
         public static int[] Solution49(int[] numbers)
         {
-            int mul = (numbers.Length-1) * (numbers.Length - 1);
-            int[] subanswer = new int[mul];
-            int count = 0;
-            int flag = 0;
-
-            Array.Sort(numbers);
+            List<int> answer = new List<int>();
+            int check= 0;
 
             for (int i = 0; i < numbers.Length-1; i++)
             {               
                 for (int j = i+1; j < numbers.Length; j++)
                 {
-                    flag = 0;
-                    for(int k = 0; k<numbers.Length; k++)
+                    check = numbers[i] + numbers[j];
+                    if(answer.Contains(check) == false)
                     {
-                        if (subanswer[k] == numbers[j] + numbers[i])
-                            flag++;
+                        answer.Add(check);
                     }
-                    if (flag == 0)
-                    {
-                        subanswer[count] = numbers[i] + numbers[j];
-                        count++;
-                    }
-
-                }
+  
+                }   
+             
             }
 
-            int[] answer = new int[count];
-
-
-
-            for (int i = 0; i < answer.Length; i++)
-            {
-                answer[i] = subanswer[i];
-                Console.WriteLine(answer[i]);
-            }
-
-            Console.WriteLine();
-            return answer;
+            answer.Sort();
+            return answer.ToArray();
         }
 
         public static int[] Solution50(string s)
