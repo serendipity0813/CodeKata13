@@ -110,14 +110,14 @@ namespace CodeKata13
             //Level_60.Solution58(nums);
             //int[] section = { 2, 3, 6};
             //Level_60.Solution59(8, 4, section);
-            Level_60.Solution60(10, 3, 2);
+            //Level_60.Solution60(10, 3, 2);
 
             //int[] win_nums = { 31, 10, 45, 1, 6, 19 };
             //int[] lottos= { 44, 1, 0, 0, 31, 25 };
             //Level_70.Solution61(lottos, win_nums);
             //string[] babbling = { "ayaye", "uuu", "yeye", "yemawoo", "ayaayaa" };
             //Level_70.Solution62(babbling);
-            //Level_70.Solution63("5525", "1255");
+            Level_70.Solution63("100", "203045");
             //int[] lost = { 2, 4 };
             //int[] reserve= { 3 };
             //Level_70.Solution64(5, lost, reserve);

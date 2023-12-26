@@ -347,30 +347,17 @@ namespace CodeKata13
             return answer;
         }
 
-        //다시 풀기
+       
         public static long Solution60(int number, int limit, int power)
         {
             long answer = 0;
             long count = 0;
-            int root = 0;
+            double root = 0;
 
             for(int i=1; i<=number; i++)
             {
                 count = 0;
-                root = 0;
-
-                for (int j = 1; j <= i; j++)
-                {
-                    if (j * j >= i)
-                    {
-                        root = j;
-                        break;
-                    }
-                   
-
-                }
-
-
+                root = Math.Sqrt(i);
 
                 for (int j=1; j<=root; j++)
                 {
@@ -392,6 +379,8 @@ namespace CodeKata13
 
             Console.WriteLine(answer);
             return answer;
+
+
         }
 
 

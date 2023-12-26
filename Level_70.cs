@@ -4,26 +4,28 @@ namespace CodeKata13
 {
     internal class Level_70
     {
-        //다시풀기
         public static int[] Solution61(int[] lottos, int[] win_nums)
         {
             int[] answer = new int[2];
             int winpoint = 0;
             int count = 0;
 
-            for(int i = 0; i < win_nums.Length; i++)
+            for(int i = 0; i < lottos.Length; i++)
             {
-                if (win_nums[i] == 0)
+                if (lottos[i] == 0)
                     count++;
                 else
                 {
-                    for(int j=0; j < lottos.Length; j++)
+                    for(int j=0; j < win_nums.Length; j++)
                     {
-                        if (win_nums[i] == lottos[j])
+                        if (win_nums[j] == lottos[i])
                             winpoint++;
                     }
                 }
             }
+
+            Console.WriteLine(count);
+            Console.WriteLine(winpoint);
 
             answer[0] = 7 - winpoint - count;
             if (answer[0] == 7)
@@ -68,71 +70,75 @@ namespace CodeKata13
             string answer = "";
             int[] xarray = new int[X.Length];
             int[] yarray = new int[Y.Length];
-            int[] countarr = new int[10];
-            int check1 = 0;
-            int check2 = 0;
+            int[] countx = new int[10];
+            int[] county = new int[10];
+            int count = 0;
 
             for (int i=0; i < X.Length; i++)
             {
                 xarray[i] = (int)Char.GetNumericValue(X[i]);
-                Console.Write(xarray[i]);
             }
-            Console.WriteLine();
+
             for (int i = 0; i < Y.Length; i++)
             {
                 yarray[i] = (int)Char.GetNumericValue(Y[i]);
-                Console.Write(yarray[i]);
             }
-            Console.WriteLine();
 
             Array.Sort(xarray);
             Array.Sort(yarray);
 
-
-
-            for(int i = 0; i < 10; i++)
+            for (int i = countx.Length - 1; i >= 0; i--)
             {
-                check1 = 0;
-                check2 = 0;
-
-                for (int j = 0; j < X.Length; j++)
+                for(int j = 0; j < xarray.Length; j++)
                 {
                     if (xarray[j] == i)
-                        check1++;
+                        countx[i]++;
                 }
 
-                for (int j = 0; j < X.Length; j++)
+                for (int j = 0; j < yarray.Length; j++)
                 {
                     if (yarray[j] == i)
-                        check2++;
+                        county[i]++;
                 }
 
-                if (check1 > check2)
-                    countarr[i] = check2;
-                else if (check2 > check1)
-                    countarr[i] = check1;
-                else if(check1 == check2 && check1 == 0)
-                    countarr[i] = -1;
-                else
-                    countarr[i] = check1;
-          
-
-                Console.Write(countarr[i]);
-            }
-
-            Console.WriteLine();
-
-            for(int i = countarr.Length -1; i > 0; i--)
-            {
-                for(int j = 0; j < countarr[i]; j++)
+                if (countx[i] < county[i])
                 {
-                    answer += i;
+                    for (int j = 0; j < countx[i]; j++)
+                    {
+                        answer += i;
+                        count++;
+                    }
                 }
-            }
 
+                else if (countx[i] > county[i])
+                {
+                    for (int j = 0; j < county[i]; j++)
+                    {
+                        answer += i;
+                        count++;
+                    }
+                }
+
+                else if (countx[i] == county[i])
+                {
+                    for (int j = 0; j < countx[i]; j++)
+                    {
+                        answer += i;
+                        count++;
+                    }
+
+                }
+
+            }
+            if (count== 0)
+                answer = "-1";
+
+            if (answer[0] == '0')
+                answer = "0";
 
             Console.Write(answer);
             return answer;
+
         }
 
         //test 케이스 몇개 틀림
