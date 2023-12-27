@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Text;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace CodeKata13
 {
@@ -64,79 +67,134 @@ namespace CodeKata13
             return answer;
         }
 
-        //다시 풀기 예시틀림
         public static string Solution63(string X, string Y)
         {
             string answer = "";
-            int[] xarray = new int[X.Length];
-            int[] yarray = new int[Y.Length];
+            StringBuilder subanswer = new StringBuilder();
             int[] countx = new int[10];
             int[] county = new int[10];
             int count = 0;
 
-            for (int i=0; i < X.Length; i++)
+ 
+            for (int i = 0; i < X.Length; i++)
             {
-                xarray[i] = (int)Char.GetNumericValue(X[i]);
+                switch(X[i])
+                { 
+                    case '0':
+                        countx[0]++;
+                        break;
+                    case '1':
+                        countx[1]++;
+                        break;
+                    case '2':
+                        countx[2]++;
+                        break;
+                    case '3':
+                        countx[3]++;
+                        break;
+                    case '4':
+                        countx[4]++;
+                        break;
+                    case '5':
+                        countx[5]++;
+                        break;
+                    case '6':
+                        countx[6]++;
+                        break;
+                    case '7':
+                        countx[7]++;
+                        break;
+                    case '8':
+                        countx[8]++;
+                        break;
+                    case '9':
+                        countx[9]++;
+                        break;
+
+                }
             }
 
             for (int i = 0; i < Y.Length; i++)
             {
-                yarray[i] = (int)Char.GetNumericValue(Y[i]);
+                switch (Y[i])
+                {
+                    case '0':
+                        county[0]++;
+                        break;
+                    case '1':
+                        county[1]++;
+                        break;
+                    case '2':
+                        county[2]++;
+                        break;
+                    case '3':
+                        county[3]++;
+                        break;
+                    case '4':
+                        county[4]++;
+                        break;
+                    case '5':
+                        county[5]++;
+                        break;
+                    case '6':
+                        county[6]++;
+                        break;
+                    case '7':
+                        county[7]++;
+                        break;
+                    case '8':
+                        county[8]++;
+                        break;
+                    case '9':
+                        county[9]++;
+                        break;
+
+                }
             }
 
-            Array.Sort(xarray);
-            Array.Sort(yarray);
 
-            for (int i = countx.Length - 1; i >= 0; i--)
+            for(int i = 9; i>=0; i--)
             {
-                for(int j = 0; j < xarray.Length; j++)
-                {
-                    if (xarray[j] == i)
-                        countx[i]++;
-                }
-
-                for (int j = 0; j < yarray.Length; j++)
-                {
-                    if (yarray[j] == i)
-                        county[i]++;
-                }
-
-                if (countx[i] < county[i])
-                {
-                    for (int j = 0; j < countx[i]; j++)
-                    {
-                        answer += i;
-                        count++;
-                    }
-                }
-
-                else if (countx[i] > county[i])
+                if (countx[i] > county[i])
                 {
                     for (int j = 0; j < county[i]; j++)
                     {
-                        answer += i;
-                        count++;
+                        subanswer.Append(i);
                     }
+                       
                 }
 
-                else if (countx[i] == county[i])
+                else if (countx[i] < county[i])
                 {
                     for (int j = 0; j < countx[i]; j++)
                     {
-                        answer += i;
-                        count++;
+                        subanswer.Append(i);
                     }
-
                 }
 
+                else
+                {
+                    for (int j = 0; j < countx[i]; j++)
+                    {
+                        subanswer.Append(i);
+                    }
+                }
+
+                if (countx[i] != 0 && county[i] != 0)
+                    count++;
             }
+          
+            answer = subanswer.ToString();
+
+           
+
             if (count== 0)
                 answer = "-1";
 
             if (answer[0] == '0')
                 answer = "0";
 
-            Console.Write(answer);
+            Console.WriteLine(answer);
             return answer;
 
         }
