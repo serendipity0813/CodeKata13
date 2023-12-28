@@ -121,8 +121,10 @@ namespace CodeKata13
             //int[] lost = { 2, 4 };
             //int[] reserve= { 3 };
             //Level_70.Solution64(5, lost, reserve);
-            //Level_70.Solution65("aaabbaccccabba");
-
+            //Level_70.Solution65("abracadabra");
+            string[] keymap = { "ABACD", "BCEFD" };
+            string[] targets = { "ABCD", "AABB" };
+            Level_70.Solution66(keymap, targets);
         }
 
     }

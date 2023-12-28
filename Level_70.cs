@@ -199,7 +199,6 @@ namespace CodeKata13
 
         }
 
-        //test 케이스 몇개 틀림
         public static int Solution64(int n, int[] lost, int[] reserve)
         {
             int answer = 0;
@@ -252,15 +251,15 @@ namespace CodeKata13
                     }
                     else
                     {
-                        if (students[i + 1] == 2)
-                        {
-                            students[i]++;
-                            students[i + 1]--;
-                        }
-                        else if (students[i - 1] == 2)
+                        if (students[i - 1] == 2)
                         {
                             students[i]++;
                             students[i - 1]--;
+                        }
+                        else if (students[i + 1] == 2)
+                        {
+                            students[i]++;
+                            students[i + 1]--;
                         }
                     }
 
@@ -279,7 +278,7 @@ namespace CodeKata13
 
         }
 
-        //다시풀기
+        
         public static int Solution65(string s)
         {
             int answer = 0;
@@ -290,14 +289,20 @@ namespace CodeKata13
 
             for(int i=0; i<s.Length; i++)
             {
-                if(flag)
+                if (i == s.Length - 1)
+                {
+                    answer++;
+                    break;
+                }
+
+
+                if (flag)
                 {
                     start = s[i];
                     same = 1;
                     differ = 0;
                     flag = false;
-                    if (i == s.Length - 1)
-                        answer++;
+
                 }
 
                 else
@@ -320,5 +325,64 @@ namespace CodeKata13
             Console.WriteLine(answer);
             return answer;
         }
+
+        public static int[] Solution66(string[] keymap, string[] targets)
+        {
+            int[] answer = new int[targets.Length];
+            int count = 0;
+
+
+            for(int i=0; i<targets.Length; i++)
+            {
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.Write(i + "회차 ");
+                for (int j = 0; j < targets[i].Length; j++)
+                {
+                    Console.WriteLine();
+                    Console.Write(j + "번째 ");
+                    count = 1;
+
+                    while(count != 0)
+                    {
+                        for (int k = 0; k < keymap.Length; k++)
+                        {
+                            if(count < keymap[k].Length)
+                            {
+                                if (keymap[k][count] == targets[i][j])
+                                {
+                                    Console.Write(keymap[k][count] + targets[i][j] + count);
+                                    answer[i] += count;
+                                    count = 0;
+                                    break;
+                                }
+                            }
+                            
+                        }
+                        if(count != 0)
+                        count++;
+
+                    }
+
+                  
+
+                    if (answer[i] == 0)
+                        answer[i]--;
+
+            
+                   
+                      
+                }
+            }
+
+            for(int i=0; i<targets.Length; i++)
+            {
+                Console.WriteLine(answer[i]);
+            }
+
+            return answer;
+        }
+
+
     }
 }
