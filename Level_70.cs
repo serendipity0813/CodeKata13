@@ -339,43 +339,42 @@ namespace CodeKata13
                 Console.Write(i + "회차 ");
                 for (int j = 0; j < targets[i].Length; j++)
                 {
+                    count = 200;
                     Console.WriteLine();
                     Console.Write(j + "번째 ");
-                    count = 1;
 
-                    while(count != 0)
-                    {
                         for (int k = 0; k < keymap.Length; k++)
                         {
-                            if(count < keymap[k].Length)
+                            for(int num = 0; num < keymap[k].Length; num++)
                             {
-                                if (keymap[k][count] == targets[i][j])
+                                if (keymap[k][num] == targets[i][j])
                                 {
-                                    Console.Write(keymap[k][count] + targets[i][j] + count);
-                                    answer[i] += count;
-                                    count = 0;
+                                    if(num < count-1)
+                                    count = num+1;
                                     break;
                                 }
                             }
                             
                         }
-                        if(count != 0)
-                        count++;
 
+                    if (count != 200)
+                        answer[i] += count;
+
+                    else if (count == 200)
+                    {
+                        answer[i] = -1;
+                        break;
                     }
+                       
 
-                  
-
-                    if (answer[i] == 0)
-                        answer[i]--;
-
-            
-                   
-                      
+                    Console.Write(answer[i]);
                 }
-            }
 
-            for(int i=0; i<targets.Length; i++)
+
+            }
+            Console.WriteLine();
+
+            for (int i=0; i<targets.Length; i++)
             {
                 Console.WriteLine(answer[i]);
             }
@@ -383,6 +382,15 @@ namespace CodeKata13
             return answer;
         }
 
+        public static string Solution67(string s, string skip, int index)
+        {
+              string answer = "";
+
+
+
+              return answer;
+
+        }
 
     }
 }
