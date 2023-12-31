@@ -384,11 +384,36 @@ namespace CodeKata13
 
         public static string Solution67(string s, string skip, int index)
         {
-              string answer = "";
+            string answer = "";
+            List<int> skips = new List<int>();
 
+            foreach (char c in skip)
+                skips.Add(c);
 
+            for (int i = 0; i < s.Length; i++)
+            {
+                int pass = 0;
 
-              return answer;
+                int alp = Convert.ToInt32(s[i]);
+
+                for(int j=0; j<index; j++)
+                {
+                    alp++;
+
+                    if (alp > 122)
+                        alp -= 26;
+
+                    if (skips.Contains(alp))
+                        j--;
+                    
+                }
+
+                answer += Convert.ToChar(alp); 
+
+                Console.WriteLine(answer);
+            }
+
+            return answer;
 
         }
 
