@@ -392,7 +392,6 @@ namespace CodeKata13
 
             for (int i = 0; i < s.Length; i++)
             {
-                int pass = 0;
 
                 int alp = Convert.ToInt32(s[i]);
 
@@ -416,6 +415,8 @@ namespace CodeKata13
             return answer;
 
         }
+
+
 
     }
 }
