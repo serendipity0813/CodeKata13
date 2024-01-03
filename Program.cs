@@ -125,7 +125,10 @@ namespace CodeKata13
             //string[] keymap = { "AGZ", "BSSS" };
             //string[] targets = { "ASA", "BGZ" };
             //Level_70.Solution66(keymap, targets);
-            Level_70.Solution67("aukks", "wbqd", 5);
+            //Level_70.Solution67("aukks", "wbqd", 5);
+            int[] ingredient = { 2, 1, 1, 2, 3, 1, 2, 3, 1 };
+            Level_70.Solution68(ingredient);
+
 
         }
 

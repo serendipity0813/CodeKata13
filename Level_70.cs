@@ -416,7 +416,52 @@ namespace CodeKata13
 
         }
 
+        public static int Solution68(int[] ingredient)
+        {
+            int answer = 0;
+            int check = 0;
+            bool flag = true;
 
+            List<int> ingredients = new List<int>();
+
+            for(int i=0; i<ingredient.Length; i++)
+            {
+                ingredients.Add(ingredient[i]);                                           
+            }
+
+            ingredients.Add(-1);
+
+
+            while(flag)
+            {
+
+                if (ingredients[check] == -1)
+                    flag = false;
+                else
+                {
+                    if (check > 2)
+                    {
+                        if (ingredients[check] == 1 && ingredients[check - 1] == 3 && ingredients[check - 2] == 2 && ingredients[check - 3] == 1)
+                        {
+                            ingredients.RemoveAt(check);
+                            ingredients.RemoveAt(check - 1);
+                            ingredients.RemoveAt(check - 2);
+                            ingredients.RemoveAt(check - 3);
+                            answer++;
+                            check = check - 4;
+                        }
+             
+                    }
+                }
+
+                check++;
+
+            }
+          
+            
+            Console.WriteLine(answer);
+            return answer;
+        }
 
     }
 }
