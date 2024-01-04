@@ -463,5 +463,171 @@ namespace CodeKata13
             return answer;
         }
 
+        public static string Solution69(string[] survey, int[] choices)
+        {
+            int[] result = new int[4];  
+            string answer = "";
+
+            for(int i = 0; i<choices.Length; i++)
+            {
+                switch(choices[i])
+                {
+                    case 1:
+                        if (survey[i] == "RT")
+                            result[0] -= 3;                 
+                        else if (survey[i] == "TR")
+                            result[0] += 3;
+                        if (survey[i] == "FC")
+                            result[1] -= 3;
+                        else if (survey[i] == "CF")
+                            result[1] += 3;
+                        if (survey[i] == "MJ")
+                            result[2] -= 3;
+                        else if (survey[i] == "JM")
+                            result[2] += 3;
+                        if (survey[i] == "AN")
+                            result[3] -= 3;
+                        else if (survey[i] == "NA")
+                            result[3] += 3;
+                        break;
+                    case 2:
+                        if (survey[i] == "RT")
+                            result[0] -= 2;
+                        else if (survey[i] == "TR")
+                            result[0] += 2;
+                        if (survey[i] == "FC")
+                            result[1] -= 2;
+                        else if (survey[i] == "CF")
+                            result[1] += 2;
+                        if (survey[i] == "MJ")
+                            result[2] -= 2;
+                        else if (survey[i] == "JM")
+                            result[2] += 2;
+                        if (survey[i] == "AN")
+                            result[3] -= 2;
+                        else if (survey[i] == "NA")
+                            result[3] += 2;
+                        break;
+                    case 3:
+                        if (survey[i] == "RT")
+                            result[0] -= 1;
+                        else if (survey[i] == "TR")
+                            result[0] += 1;
+                        if (survey[i] == "FC")
+                            result[1] -= 1;
+                        else if (survey[i] == "CF")
+                            result[1] += 1;
+                        if (survey[i] == "MJ")
+                            result[2] -= 1;
+                        else if (survey[i] == "JM")
+                            result[2] += 1;
+                        if (survey[i] == "AN")
+                            result[3] -= 1;
+                        else if (survey[i] == "NA")
+                            result[3] += 1;
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        if (survey[i] == "RT")
+                            result[0] += 1;
+                        else if (survey[i] == "TR")
+                            result[0] -= 1;
+                        if (survey[i] == "FC")
+                            result[1] += 1;
+                        else if (survey[i] == "CF")
+                            result[1] -= 1;
+                        if (survey[i] == "MJ")
+                            result[2] += 1;
+                        else if (survey[i] == "JM")
+                            result[2] -= 1;
+                        if (survey[i] == "AN")
+                            result[3] += 1;
+                        else if (survey[i] == "NA")
+                            result[3] -= 1;
+                        break;
+                    case 6:
+                        if (survey[i] == "RT")
+                            result[0] += 2;
+                        else if (survey[i] == "TR")
+                            result[0] -= 2;
+                        if (survey[i] == "FC")
+                            result[1] += 2;
+                        else if (survey[i] == "CF")
+                            result[1] -= 2;
+                        if (survey[i] == "MJ")
+                            result[2] += 2;
+                        else if (survey[i] == "JM")
+                            result[2] -= 2;
+                        if (survey[i] == "AN")
+                            result[3] += 2;
+                        else if (survey[i] == "NA")
+                            result[3] -= 2;
+                        break;
+                    case 7:
+                        if (survey[i] == "RT")
+                            result[0] += 3;
+                        else if (survey[i] == "TR")
+                            result[0] -= 3;
+                        if (survey[i] == "FC")
+                            result[1] += 3;
+                        else if (survey[i] == "CF")
+                            result[1] -= 3;
+                        if (survey[i] == "MJ")
+                            result[2] += 3;
+                        else if (survey[i] == "JM")
+                            result[2] -= 3;
+                        if (survey[i] == "AN")
+                            result[3] += 3;
+                        else if (survey[i] == "NA")
+                            result[3] -= 3;
+                        break;
+
+                }
+                
+            }
+
+            if (result[0] > 0)
+                answer += "T";
+            else if (result[0] < 0)
+                answer += "R";
+            else
+                answer += "R";
+
+            if (result[1] > 0)
+                answer += "C";
+            else if (result[1] < 0)
+                answer += "F";
+            else
+                answer += "C";
+
+            if (result[2] > 0)
+                answer += "J";
+            else if (result[2] < 0)
+                answer += "M";
+            else
+                answer += "J";
+
+            if (result[3] > 0)
+                answer += "N";
+            else if (result[3] < 0)
+                answer += "A";
+            else
+                answer += "A";
+
+            Console.WriteLine(answer);
+            return answer;
+
+        }
+
+        public static int[] Solution70(string[] wallpaper)
+        {
+            int[] answer = new int[] { };
+
+            Console.WriteLine(answer);
+            return answer;
+        }
+
+
     }
 }

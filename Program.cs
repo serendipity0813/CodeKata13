@@ -126,9 +126,13 @@ namespace CodeKata13
             //string[] targets = { "ASA", "BGZ" };
             //Level_70.Solution66(keymap, targets);
             //Level_70.Solution67("aukks", "wbqd", 5);
-            int[] ingredient = { 2, 1, 1, 2, 3, 1, 2, 3, 1 };
-            Level_70.Solution68(ingredient);
-
+            //int[] ingredient = { 2, 1, 1, 2, 3, 1, 2, 3, 1 };
+            //Level_70.Solution68(ingredient);
+            //string[] survey = { "AN", "CF", "MJ", "RT", "NA" };
+            //int[] choices = { 5, 3, 2, 7, 5 };
+            //Level_70.Solution69(survey, choices);
+            string[] wallpaper = { ".#...", "..#..", "...#." };
+            Level_70.Solution70(wallpaper);
 
         }
 
