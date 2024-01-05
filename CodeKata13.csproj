@@ -51,6 +51,7 @@
     <Compile Include="Level_50.cs" />
     <Compile Include="Level_60.cs" />
     <Compile Include="Level_70.cs" />
+    <Compile Include="Level_80.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

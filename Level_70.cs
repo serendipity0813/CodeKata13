@@ -622,9 +622,59 @@ namespace CodeKata13
 
         public static int[] Solution70(string[] wallpaper)
         {
-            int[] answer = new int[] { };
+            int[] answer = new int[4];
+            bool[] udlr = new bool[4];
 
-            Console.WriteLine(answer);
+            for (int i=0; i < wallpaper.Length; i++)
+            {
+                for(int j=0; j < wallpaper[i].Length; j++)
+                {
+                    if (wallpaper[i][j] == '#' && udlr[0] == false)
+                    {
+                        answer[0] = i;
+                        udlr[0] = true;
+                    }
+                    else if (wallpaper[i][j] == '#')
+                    {
+                        answer[2] = i + 1;
+                        udlr[2] = true;
+                    }
+                  
+                }
+            }
+
+            if (udlr[2] == false)
+                answer[2] += answer[0]+1; 
+
+            for (int i = 0; i < wallpaper[0].Length; i++)
+            {
+                for (int j = 0; j < wallpaper.Length; j++)
+                {
+                    if (wallpaper[j][i] == '#' && udlr[1] == false)
+                    {
+                        answer[1] = i;
+                        udlr[1] = true;
+                    }
+                    else if (wallpaper[j][i] == '#')
+                    {
+                        answer[3] = i + 1;
+                        udlr[3] = true;
+                    }
+  
+
+                }
+            }
+
+
+            if (udlr[3] == false)
+                answer[3] = answer[1] +1;
+
+
+            for (int i=0; i < answer.Length; i++)
+            {
+                Console.Write(answer[i]);
+            }
+
             return answer;
         }
 
