@@ -86,5 +86,52 @@ namespace CodeKata13
 
             return answer;
         }
+
+        public static string[] Solution72(string[] players, string[] callings)
+        {
+            string[] answer = new string[players.Length];
+
+            var dictionary = new Dictionary<string, int>();
+
+            for (int i = 0; i < players.Length; i++)
+            {
+                dictionary.Add(players[i], i + 1);
+            }
+
+            for (int i = 0; i < callings.Length; i++)
+            {
+                int value = dictionary[callings[i]];
+                //모든 항목을 찾는 것이 아닌 좀 더 빠른 방법 찾아야 함
+                for (int j = 0; j < players.Length; j++)
+                {
+                    if (dictionary[players[j]] == value - 1)
+                    {
+                        dictionary[players[j]] = dictionary[players[j]] + 1;
+                        break;
+                    }
+
+                }
+
+                dictionary[callings[i]] = dictionary[callings[i]] - 1;
+
+            }
+
+            foreach (KeyValuePair<string, int> pair in dictionary)
+            {
+                answer[pair.Value - 1] = pair.Key;
+            }
+
+            for (int i = 0; i < answer.Length; i++)
+            {
+                Console.WriteLine(answer[i]);
+            }
+
+
+            return answer;
+        }
+
+
+
+
     }
 }
