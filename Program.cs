@@ -133,7 +133,7 @@ namespace CodeKata13
             //Level_70.Solution69(survey, choices);
             //string[] wallpaper = { ".##...##.", "#..#.#..#", "#...#...#", ".#.....#.", "..#...#..", "...#.#...", "....#...." };
             //Level_70.Solution70(wallpaper);
-            string today = "2022.05.09";
+            string today = "2022.05.19";
             string[] terms = { "A 6", "B 12", "C 3" };
             string[] privacies = { "2021.05.02 A", "2021.07.01 B", "2022.02.19 C", "2022.02.20 C" };
             Level_80.Solution71(today, terms, privacies);
