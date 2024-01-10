@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CodeKata13
 {
@@ -96,34 +94,19 @@ namespace CodeKata13
             for (int i = 0; i < players.Length; i++)
             {
                 dictionary.Add(players[i], i + 1);
+                answer[i] = players[i];
             }
 
             for (int i = 0; i < callings.Length; i++)
             {
                 int value = dictionary[callings[i]];
-                //모든 항목을 찾는 것이 아닌 좀 더 빠른 방법 찾아야 함
-                for (int j = 0; j < players.Length; j++)
-                {
-                    if (dictionary[players[j]] == value - 1)
-                    {
-                        dictionary[players[j]] = dictionary[players[j]] + 1;
-                        break;
-                    }
-
-                }
-
+                string key = answer[value-2];
+                //var key = dictionary.FirstOrDefault(x => x.Value == value - 1).Key;
+                dictionary[key] = value;
                 dictionary[callings[i]] = dictionary[callings[i]] - 1;
+                answer[value-1] = key;
+                answer[value - 2] = callings[i];
 
-            }
-
-            foreach (KeyValuePair<string, int> pair in dictionary)
-            {
-                answer[pair.Value - 1] = pair.Key;
-            }
-
-            for (int i = 0; i < answer.Length; i++)
-            {
-                Console.WriteLine(answer[i]);
             }
 
 
