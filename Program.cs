@@ -137,9 +137,12 @@ namespace CodeKata13
             //string[] terms = { "A 6", "B 12", "C 3" };
             //string[] privacies = { "2021.05.02 A", "2021.07.01 B", "2022.02.19 C", "2022.02.20 C" };
             //Level_80.Solution71(today, terms, privacies);
-            string[] players = { "mumu", "soe", "poe", "kai", "mine" };
-            string[] callings = { "kai", "kai", "mine", "mine" };
-            Level_80.Solution72(players, callings);
+            //string[] players = { "mumu", "soe", "poe", "kai", "mine" };
+            //string[] callings = { "kai", "kai", "mine", "mine" };
+            //Level_80.Solution72(players, callings);
+            string[] park = { "SOO", "OXX", "OOO" };
+            string[] routes = { "E 2", "S 2", "W 1" };
+            Level_80.Solution73(park, routes);
 
         }
 
