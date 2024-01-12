@@ -140,9 +140,13 @@ namespace CodeKata13
             //string[] players = { "mumu", "soe", "poe", "kai", "mine" };
             //string[] callings = { "kai", "kai", "mine", "mine" };
             //Level_80.Solution72(players, callings);
-            string[] park = { "SOO", "OXX", "OOO" };
-            string[] routes = { "E 2", "S 2", "W 1" };
-            Level_80.Solution73(park, routes);
+            //string[] park = {"OXXO", "XSXO", "XXXX" };
+            //string[] routes = { "E 1", "S 1" };
+            //Level_80.Solution73(park, routes);
+            string[] id_list = { "muzi", "frodo", "apeach", "neo" };
+            string[] report = { "muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi" };
+            Level_80.Solution74(id_list, report, 2);
+
 
         }
 

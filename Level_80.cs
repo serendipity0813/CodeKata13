@@ -117,7 +117,7 @@ namespace CodeKata13
         {
             int[] answer = new int[2];
             int high = park.Length;
-            int width = park[1].Length;
+            int width = park[0].Length;
             string number = "";
             int num2 = 0;
 
@@ -141,83 +141,88 @@ namespace CodeKata13
                     case 'E':
                         number = routes[i].Substring(2);
                         num2 = Int32.Parse(number);
-                        for (int j = answer[1]; j < answer[1] + num2; j++)
+                        if (answer[1] + num2 < width)
                         {
-                            int num = answer[0];
-                            if (park[num][j] == 'X')
+                            for (int j = answer[1]; j <= answer[1] + num2; j++)
                             {
-                                flag = true;
-                                break;
+                                int num = answer[0];
+                                if (park[num][j] == 'X')
+                                {
+                                    flag = true;
+                                    break;
+                                }
+
                             }
-                               
-                        }
-                        if (answer[1] + num2 <= width && flag == false)
-                        {
+                            if(flag == false)
                             answer[1] += num2;
                         }
                         break;
                     case 'W':
                         number = routes[i].Substring(2);
                         num2 = Int32.Parse(number);
-                        for (int j = answer[1]; j > answer[1] - num2; j--)
+                        if (answer[1] - num2 >= 0 )
                         {
-                            int num = answer[0];
-                            if (park[num][j] == 'X')
+                            for (int j = answer[1]; j >= answer[1] - num2; j--)
                             {
-                                flag = true;
-                                break;
-                            }
+                                int num = answer[0];
+                                if (park[num][j] == 'X')
+                                {
+                                    flag = true;
+                                    break;
+                                }
 
-                        }
-                        if (answer[1] - num2 >= 0)
-                        {
+                            }
+                            if(flag == false)
                             answer[1] -= num2;
                         }
                         break;
                     case 'N':
                         number = routes[i].Substring(2);
                         num2 = Int32.Parse(number);
-                        for (int j = answer[0]; j > answer[0] - num2; j--)
+                        if (answer[0] - num2 >= 0 )
                         {
-                            int num = answer[1];
-                            if (park[j][num] == 'X')
+                            for (int j = answer[0]; j >= answer[0] - num2; j--)
                             {
-                                flag = true;
-                                break;
+                                int num = answer[1];
+                                if (park[j][num] == 'X')
+                                {
+                                    flag = true;
+                                    break;
+                                }
                             }
-                        }
-                        if (answer[0] - num2 >= 0)
-                        {
-                            answer[0] -= num2;
+                            if (flag == false)
+                                answer[0] -= num2;
                         }
                         break;
                     case 'S':
                         number = routes[i].Substring(2);
-                        num2 = Int32.Parse(number);
-                        for (int j = answer[0]; j < answer[0] + num2; j++)
+                        num2 = Int32.Parse(number);                 
+                        if (answer[0] + num2 < high)
                         {
-                            int num = answer[1];
-                            if (park[j][num] == 'X')
+                            for (int j = answer[0]; j <= answer[0] + num2; j++)
                             {
-                                flag = true;
-                                break;
+                                int num = answer[1];
+                                if (park[j][num] == 'X')
+                                {
+                                    flag = true;
+                                    break;
+                                }
                             }
-                        }
-                        if (answer[0] + num2 <= high)
-                        {
-                            answer[0] += num2;
+                            if (flag == false)
+                                answer[0] += num2;
                         }
                         break;
                 }
             }
 
-            for (int i = 0; i < 2; i++)
-            {
-                Console.WriteLine(answer[i]);
-            }
-
             return answer;
 
+        }
+
+        public static int[] Solution74(string[] id_list, string[] report, int k)
+        {
+            int[] answer = new int[] { };
+            return answer;
         }
 
     }
