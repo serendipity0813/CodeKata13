@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Management.Instrumentation;
@@ -143,9 +144,10 @@ namespace CodeKata13
             //string[] park = {"OXXO", "XSXO", "XXXX" };
             //string[] routes = { "E 1", "S 1" };
             //Level_80.Solution73(park, routes);
-            string[] id_list = { "muzi", "frodo", "apeach", "neo" };
-            string[] report = { "muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi" };
-            Level_80.Solution74(id_list, report, 2);
+            //string[] id_list = { "muzi", "frodo", "apeach", "neo" };
+            //string[] report = { "muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi" };
+            //Level_80.Solution74(id_list, report, 2);
+            Level_80.Solution75("1 2 3 4");
 
 
         }

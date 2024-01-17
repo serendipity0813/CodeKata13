@@ -219,55 +219,54 @@ namespace CodeKata13
 
         }
 
-        public static int[] Solution74(string[] id_list, string[] report, int k)
+        public static int[] Solution74(string[] id_list, string[] report, int k)  //나중에 다시 풀어보기
         {
             int[] answer = new int[id_list.Length];
-            int[,] reportlist = new int[report.Length, 2];
             string[] words; 
 
             //<id, 배열번호>
-            var id_number = new Dictionary<string, int>();
+            Dictionary<string, int> id_number = new Dictionary<string, int>();
 
-            //<신고당한사람, 신고받은 횟수>
-            var reportcount = new Dictionary<string, int>();
-
+            Dictionary<string, List<string>> reportList = new Dictionary<string, List<string>>();
 
             for (int i = 0; i < id_list.Length; i++)
             {
                 id_number.Add(id_list[i], i);
-                reportcount.Add(id_list[i], 0);
             }
 
             for(int i=0; i<report.Length; i++)
             {             
                 words = report[i].Split(' ');
-                reportlist[i,0] = id_number[words[0]];
-                reportlist[i,1] = id_number[words[1]];
-                reportcount[words[1]]++;
-                Console.Write(reportlist[i,0] + " " + reportlist[i,1]);
+                if (reportList.ContainsKey(words[1]) == false)
+                    reportList.Add(words[1], new List<string>());
+                if (reportList[words[1]].Contains(words[0]) == false)
+                    reportList[words[1]].Add(words[0]);
                 Console.WriteLine();
             }
 
-            for(int i=0; i< id_list.Length; i++)
+            foreach (var list in reportList.Values)
             {
-                if (reportcount[id_list[i]] >= k)
+                if (list.Count >= k)
                 {
-                    for(int j=0; j<report.Length; j++)
+                    foreach (var name in list)
                     {
-                        if (reportlist[j, 1] == id_number[id_list[i]])
-                        {
-                            answer[reportlist[j, 0]]++;
-                        }
- 
+                        answer[id_number[name]]++;
                     }
                 }
-
             }
 
             for (int i = 0; i < id_list.Length; i++)
             {
                 Console.Write(answer[i]);
             }
+
+
+            return answer;
+        }
+
+        public static string Solution75(string s)
+        {
+            string answer = "";
 
 
             return answer;
