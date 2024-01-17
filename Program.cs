@@ -147,7 +147,8 @@ namespace CodeKata13
             //string[] id_list = { "muzi", "frodo", "apeach", "neo" };
             //string[] report = { "muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi" };
             //Level_80.Solution74(id_list, report, 2);
-            Level_80.Solution75("1 2 3 4");
+            //Level_80.Solution75("1 2 3 4");
+            Level_80.Solution76("3people unFollowed me");
 
 
         }

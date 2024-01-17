@@ -267,6 +267,32 @@ namespace CodeKata13
         public static string Solution75(string s)
         {
             string answer = "";
+            int MinNumber;
+            int MaxNumber;
+            string[] Numbers;
+
+            Numbers = s.Split(' ');
+            MinNumber = int.Parse(Numbers[0]);  
+            MaxNumber = int.Parse(Numbers[0]);
+
+            for(int i=1; i<Numbers.Length; i++)
+            {
+                if (int.Parse(Numbers[i]) < MinNumber)
+                    MinNumber = int.Parse(Numbers[i]);
+                if (int.Parse(Numbers[i]) > MaxNumber)
+                    MaxNumber = int.Parse(Numbers[i]);
+            }
+
+            answer = MinNumber.ToString() + ' ' + MaxNumber.ToString();
+
+            Console.WriteLine(answer);
+            return answer;
+        }
+
+        public static string Solution76(string s)
+        {
+            string answer = "";
+
 
 
             return answer;
