@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace CodeKata13
@@ -292,9 +293,34 @@ namespace CodeKata13
         public static string Solution76(string s)
         {
             string answer = "";
+            s = s.ToLower();
+            s = s.Replace("   ", "** ");
+            s = s.Replace("  ", "* ");
 
+            string[] words = s.Split(' ');
+            string alp;
 
+            for(int i=0; i<words.Length; i++)
+            {
+                Console.Write(words[i]);
+                alp = words[i].Substring(0,1);
+                alp = alp.ToUpper();
+                if (alp == "*")
+                    answer += "*";
+                else
+                {
+                    if (i == 0)
+                        answer = answer + alp + words[i].Substring(1, words[i].Length - 1);
+                    else
+                        answer = answer + ('*') + alp + words[i].Substring(1, words[i].Length - 1);
+                }
 
+                Console.Write(alp);
+                Console.WriteLine();
+            }
+
+            answer = answer.Replace('*', ' ');
+            Console.WriteLine(answer);
             return answer;
         }
 
