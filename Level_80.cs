@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Text;
 
 namespace CodeKata13
 {
@@ -293,34 +294,26 @@ namespace CodeKata13
         public static string Solution76(string s)
         {
             string answer = "";
+            StringBuilder sb = new StringBuilder();
             s = s.ToLower();
-            s = s.Replace("   ", "** ");
-            s = s.Replace("  ", "* ");
+            sb.Append(s);
+            sb[0] = char.ToUpper(sb[0]);
 
-            string[] words = s.Split(' ');
-            string alp;
-
-            for(int i=0; i<words.Length; i++)
+            for (int i=1; i<sb.Length; i++)
             {
-                Console.Write(words[i]);
-                alp = words[i].Substring(0,1);
-                alp = alp.ToUpper();
-                if (alp == "*")
-                    answer += "*";
-                else
-                {
-                    if (i == 0)
-                        answer = answer + alp + words[i].Substring(1, words[i].Length - 1);
-                    else
-                        answer = answer + ('*') + alp + words[i].Substring(1, words[i].Length - 1);
-                }
-
-                Console.Write(alp);
-                Console.WriteLine();
+                if (sb[i] != ' ' && sb[i - 1] == ' ')
+                    sb[i] = char.ToUpper(sb[i]);
             }
 
-            answer = answer.Replace('*', ' ');
+            answer = sb.ToString();
             Console.WriteLine(answer);
+            return answer;
+        }
+
+
+         public static int[] Solution77(string s)
+        {
+            int[] answer = new int[] { };
             return answer;
         }
 
