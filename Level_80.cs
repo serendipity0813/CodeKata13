@@ -310,10 +310,80 @@ namespace CodeKata13
             return answer;
         }
 
-
-         public static int[] Solution77(string s)
+        public static int[] Solution77(string s)
         {
-            int[] answer = new int[] { };
+            int[] answer = new int[2];
+            int count1 = 0;
+            bool flag = true;
+
+            while(flag)
+            {
+                answer[0]++;
+                for (int i = 0; i < s.Length; i++)
+                {                 
+                    if (s[i] == '1')
+                        count1++;
+                }
+
+                answer[1] += s.Length - count1;
+                s = Convert.ToString(count1,2);
+                count1 = 0;
+
+                if(s.Length == 1)
+                    flag = false;
+
+            }
+
+            Console.WriteLine(answer[0]);
+            Console.WriteLine(answer[1]);
+            return answer;
+
+        }
+        
+        public static int Solution78(int n)
+        {
+            int answer = 0;
+            int second = 1;
+            int first = 1;
+            int temp = 0;
+
+            for(int i=3; i<=n; i++)
+            {
+                temp = first;
+                first += second;
+                second = temp;
+                first = first & 1234567;
+            }
+
+            answer = first;
+            Console.WriteLine(answer);
+            return answer;
+        }
+
+        public static int[] Solution79(int brown, int yellow)
+        {
+            int[] answer = new int[2];
+            int length = yellow+2;
+            int height = 1;
+            int rectangle = 0;
+
+            while (true)
+            {
+                rectangle = length * 2 + height * 2;
+                if (rectangle == brown)
+                    break;
+                else
+                {
+                    height++;
+                    length = yellow / height + 2;
+                }
+            }
+
+            answer[0] = length;
+            answer[1] = height + 2;
+
+            Console.WriteLine(answer[0]);
+            Console.WriteLine(answer[1]);
             return answer;
         }
 

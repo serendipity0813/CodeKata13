@@ -149,7 +149,9 @@ namespace CodeKata13
             //Level_80.Solution74(id_list, report, 2);
             //Level_80.Solution75("1 2 3 4");
             //Level_80.Solution76("  For The What 1what  ");
-            Level_80.Solution77("110010101001");
+            //Level_80.Solution77("110010101001");
+            //Level_80.Solution78(56789);
+            Level_80.Solution79(10, 2);
 
         }
 
