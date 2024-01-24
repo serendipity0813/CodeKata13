@@ -151,7 +151,10 @@ namespace CodeKata13
             //Level_80.Solution76("  For The What 1what  ");
             //Level_80.Solution77("110010101001");
             //Level_80.Solution78(56789);
-            Level_80.Solution79(10, 2);
+            //Level_80.Solution79(24, 24);
+            //Level_80.Solution80(8, 4, 7);
+            int[] arr = { 2, 6, 8, 14 };
+            Level_90.Solution81(arr);
 
         }
 

@@ -363,27 +363,59 @@ namespace CodeKata13
         public static int[] Solution79(int brown, int yellow)
         {
             int[] answer = new int[2];
-            int length = yellow+2;
-            int height = 1;
-            int rectangle = 0;
+            int height = 3;
+            int length = brown /2 - (height-2);
 
             while (true)
             {
-                rectangle = length * 2 + height * 2;
-                if (rectangle == brown)
+                if ((length-2) * (height-2) == yellow)
                     break;
                 else
                 {
                     height++;
-                    length = yellow / height + 2;
+                    length = brown / 2 - (height - 2);
                 }
             }
 
             answer[0] = length;
-            answer[1] = height + 2;
+            answer[1] = height;
 
             Console.WriteLine(answer[0]);
             Console.WriteLine(answer[1]);
+            return answer;
+        }
+
+        public static int Solution80(int n, int a, int b)
+        {
+            int answer = 0;
+            int pivot = n;
+            int count = 0;
+
+            while(n != 1)
+            {
+                n = n / 2;
+                count++;
+            }
+
+            while (true)
+            {
+                pivot = pivot / 2;
+                if (a > pivot && b > pivot)
+                {
+                    a -= pivot;
+                    b -= pivot;
+                    count--;
+                }
+                else if (a <= pivot && b <= pivot)
+                {
+                    count--;
+                }
+                else
+                    break;
+            }
+
+            Console.Write(count);
+            answer = count;
             return answer;
         }
 
