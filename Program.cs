@@ -153,8 +153,15 @@ namespace CodeKata13
             //Level_80.Solution78(56789);
             //Level_80.Solution79(24, 24);
             //Level_80.Solution80(8, 4, 7);
-            int[] arr = { 2, 6, 8, 14 };
-            Level_90.Solution81(arr);
+            //int[] arr = { 2, 6, 8, 14 };
+            //Level_90.Solution81(arr);
+            //Level_90.Solution82(4);
+            int[] tangerine = { 1, 3, 2, 5, 4, 5, 2, 3 };
+            Level_90.Solution83(6, tangerine);
+
+
+
+
 
         }
 
