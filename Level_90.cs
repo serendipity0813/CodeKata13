@@ -60,6 +60,42 @@ namespace CodeKata13
         public static int Solution83(int k, int[] tangerine)
         {
             int answer = 0;
+
+            Dictionary<int, int> dictionary = new Dictionary<int, int>();
+
+            for (int i = 0; i < tangerine.Length; i++)
+            {
+                if (dictionary.ContainsKey(tangerine[i]))
+                    dictionary[tangerine[i]]++;
+                else
+                dictionary.Add((tangerine[i]), 1);
+            }
+
+            dictionary = dictionary.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+
+
+            while (k>0)
+            {
+                int maxValue = dictionary.First().Value;
+                int maxValueKey = dictionary.First().Key;
+                Console.Write(maxValue);
+                Console.WriteLine();
+
+                if (k >= maxValue)
+                {
+                    k -= maxValue;
+                    dictionary.Remove(maxValueKey);
+                    answer++;
+                }
+                else
+                {
+                    answer++;
+                    break;
+                }
+            }
+          
+
+            Console.WriteLine(answer);
             return answer;
         }
 
