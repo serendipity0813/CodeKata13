@@ -74,18 +74,14 @@ namespace CodeKata13
             dictionary = dictionary.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
 
 
-            while (k>0)
-            {
-                int maxValue = dictionary.First().Value;
-                int maxValueKey = dictionary.First().Key;
-                Console.Write(maxValue);
-                Console.WriteLine();
 
-                if (k >= maxValue)
+            foreach (var element in dictionary)
+            {
+                if (k <= 0) break; 
+                if (k >= element.Value)
                 {
-                    k -= maxValue;
-                    dictionary.Remove(maxValueKey);
-                    answer++;
+                    k -= element.Value;
+                    answer++;   
                 }
                 else
                 {
@@ -93,11 +89,15 @@ namespace CodeKata13
                     break;
                 }
             }
-          
 
             Console.WriteLine(answer);
             return answer;
+
+
         }
+
+             
+        
 
 
     }
