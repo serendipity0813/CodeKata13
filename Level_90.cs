@@ -94,11 +94,43 @@ namespace CodeKata13
             return answer;
 
 
+        }    
+
+        public static int Solution84(string s)  //풀이x - 풀어봐야함 (괄호 회전문제)
+        {
+            int answer = -1;
+
+            return answer;
         }
 
-             
-        
+        public static int Solution85(int[] elements)
+        {
+            int answer = 0;
+            int sum = 0;
+            int numsum; 
+            List<int> group = new List<int>();
 
+            for(int i=0; i < elements.Length; i++)
+            {
+                for (int j = 0; j < elements.Length; j++)
+                {
+                    numsum = i + j;
+                    if (numsum > elements.Length - 1)
+                        numsum -= elements.Length;
+                   sum += elements[numsum];
+                    if (group.Contains(sum) == false)
+                    {
+                        group.Add(sum);
+                        answer++;
+                    }
+           
+                }
+                sum = 0;
+            }
+
+            Console.WriteLine(answer);
+            return answer;
+        }
 
     }
 }
