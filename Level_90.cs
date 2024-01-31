@@ -107,29 +107,60 @@ namespace CodeKata13
         {
             int answer = 0;
             int sum = 0;
-            int numsum; 
-            List<int> group = new List<int>();
+            int numsum;
+      
+            int[] group = new int[10000000];
 
-            for(int i=0; i < elements.Length; i++)
+            for (int i = 0; i < elements.Length; i++)
             {
                 for (int j = 0; j < elements.Length; j++)
                 {
                     numsum = i + j;
                     if (numsum > elements.Length - 1)
                         numsum -= elements.Length;
-                   sum += elements[numsum];
-                    if (group.Contains(sum) == false)
+                    sum += elements[numsum];
+                    if (group[sum] == 0)
                     {
-                        group.Add(sum);
+                        group[sum]++;
                         answer++;
                     }
-           
+
                 }
                 sum = 0;
             }
 
             Console.WriteLine(answer);
             return answer;
+        }
+
+        public static int Solution86(int[] citations)
+        {
+            int answer = 0;
+            int hindex = 0;
+            int hcount = 0;
+
+
+            Array.Sort(citations);
+
+
+            for (int i = 0; i < citations.Length; i++)
+            {
+                hindex = citations[i];
+                hcount = 0;
+                for(int j=i; j< citations.Length; j++)
+                {
+                    if (citations[j] >= hindex)
+                        hcount++;
+                }
+                if (hcount >= hindex)
+                    answer = hindex;
+                //else
+                //    break;
+            }
+
+            Console.Write(answer);
+            return answer;
+
         }
 
     }

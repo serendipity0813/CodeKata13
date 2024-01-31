@@ -159,8 +159,10 @@ namespace CodeKata13
             //int[] tangerine = { 1, 3, 2, 5, 4, 5, 2, 3 };
             //Level_90.Solution83(6, tangerine);
             //Level_90.Solution84("[](){}"); - 아직 풀이X
-            int[] elements = { 7, 9, 1, 1, 4 };
-            Level_90.Solution85(elements);
+            //int[] elements = { 7, 9, 1, 1, 4 };
+            //Level_90.Solution85(elements);
+            int[] citations = { 3, 0, 6, 1, 5 };
+            Level_90.Solution86(citations);
 
 
 
