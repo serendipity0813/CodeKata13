@@ -44,7 +44,7 @@ namespace CodeKata13
             long before = 1;
             long temp = 0;
 
-            for(int i=2; i<=n; i++)
+            for (int i = 2; i <= n; i++)
             {
                 temp = answer;
                 answer = answer + before;
@@ -68,7 +68,7 @@ namespace CodeKata13
                 if (dictionary.ContainsKey(tangerine[i]))
                     dictionary[tangerine[i]]++;
                 else
-                dictionary.Add((tangerine[i]), 1);
+                    dictionary.Add((tangerine[i]), 1);
             }
 
             dictionary = dictionary.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
@@ -77,11 +77,11 @@ namespace CodeKata13
 
             foreach (var element in dictionary)
             {
-                if (k <= 0) break; 
+                if (k <= 0) break;
                 if (k >= element.Value)
                 {
                     k -= element.Value;
-                    answer++;   
+                    answer++;
                 }
                 else
                 {
@@ -94,7 +94,7 @@ namespace CodeKata13
             return answer;
 
 
-        }    
+        }
 
         public static int Solution84(string s)  //풀이x - 풀어봐야함 (괄호 회전문제)
         {
@@ -108,7 +108,7 @@ namespace CodeKata13
             int answer = 0;
             int sum = 0;
             int numsum;
-      
+
             int[] group = new int[10000000];
 
             for (int i = 0; i < elements.Length; i++)
@@ -147,21 +147,68 @@ namespace CodeKata13
             {
                 hindex = citations[i];
                 hcount = 0;
-                for(int j=i; j< citations.Length; j++)
+                for (int j = i; j < citations.Length; j++)
                 {
                     if (citations[j] >= hindex)
                         hcount++;
                 }
-                if (hcount >= hindex)
+
+                if (hcount >= hindex && answer < hindex)
                     answer = hindex;
-                //else
-                //    break;
+                else if (hcount < hindex && answer < hcount)
+                    answer = hcount;
+
+
             }
+
+            if (answer == 0)
+                answer = citations.Length;
 
             Console.Write(answer);
             return answer;
 
         }
 
+
+        public static int[] Solution87(int n, long left, long right)
+        {
+            int[] answer = new int[right - left + 1];
+            int[,] arr = new int[n,n];
+            int line;
+            int col;
+
+            for(int i=1; i <= n; i++)
+            {
+                for(int j=1; j <= n; j++)
+                {
+                    if(i>j)
+                        arr[i - 1,j - 1] = i;
+                    else
+                        arr[i - 1,j - 1] = j;
+                }
+            }
+
+            line = (int)left / n;
+            col = (int)left % n;
+
+            for(long i=0; i<right - left + 1; i++)
+            {
+                if(col + i == n)
+                {
+                    col -= n;
+                    line++;
+                }
+                answer[i] = arr[line, col + i];
+            }
+
+            for(int j=0; j<answer.Length; j++)
+            {
+                Console.Write(answer[j]);
+            }
+            return answer;
+
+        }
+
     }
+
 }

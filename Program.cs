@@ -161,9 +161,9 @@ namespace CodeKata13
             //Level_90.Solution84("[](){}"); - 아직 풀이X
             //int[] elements = { 7, 9, 1, 1, 4 };
             //Level_90.Solution85(elements);
-            int[] citations = { 3, 0, 6, 1, 5 };
-            Level_90.Solution86(citations);
-
+            //int[] citations = {0, 0, 0, 0, 0};
+            //Level_90.Solution86(citations);
+            Level_90.Solution87(3, 2, 5);
 
 
 
