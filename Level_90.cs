@@ -169,27 +169,15 @@ namespace CodeKata13
 
         }
 
-
-        public static int[] Solution87(int n, long left, long right)
+        public static long[] Solution87(int n, long left, long right)
         {
-            int[] answer = new int[right - left + 1];
+            long[] answer = new long[right - left + 1];
             int[,] arr = new int[n,n];
-            int line;
-            int col;
+            long line;
+            long col;
 
-            for(int i=1; i <= n; i++)
-            {
-                for(int j=1; j <= n; j++)
-                {
-                    if(i>j)
-                        arr[i - 1,j - 1] = i;
-                    else
-                        arr[i - 1,j - 1] = j;
-                }
-            }
-
-            line = (int)left / n;
-            col = (int)left % n;
+            line = left / n;
+            col = left % n;
 
             for(long i=0; i<right - left + 1; i++)
             {
@@ -198,7 +186,11 @@ namespace CodeKata13
                     col -= n;
                     line++;
                 }
-                answer[i] = arr[line, col + i];
+
+                if (line > col + i)
+                    answer[i] = line + 1;
+                else
+                    answer[i] = col + i + 1;
             }
 
             for(int j=0; j<answer.Length; j++)
@@ -207,6 +199,35 @@ namespace CodeKata13
             }
             return answer;
 
+        }
+
+        public static int[,] Solution88(int[,] arr1, int[,] arr2)
+        {
+            int[,] answer = new int[arr1.GetLength(0), arr2.GetLength(1)];
+
+            for(int i=0; i < arr1.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr2.GetLength(1); j++)
+                {
+                    for (int k = 0; k < arr1.GetLength(1); k++)
+                    {
+                        answer[i, j] += arr1[i, k] * arr2[k, j];
+                    }
+                    Console.Write(answer[i, j] + " ");
+                }
+                Console.WriteLine(); 
+            }
+
+
+            return answer;
+        }
+
+        public static int Solution89(string[] want, int[] number, string[] discount)
+        {
+            int answer = 0;
+
+
+            return answer;
         }
 
     }

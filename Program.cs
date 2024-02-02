@@ -134,6 +134,8 @@ namespace CodeKata13
             //Level_70.Solution69(survey, choices);
             //string[] wallpaper = { ".##...##.", "#..#.#..#", "#...#...#", ".#.....#.", "..#...#..", "...#.#...", "....#...." };
             //Level_70.Solution70(wallpaper);
+
+
             //string today = "2022.05.19";
             //string[] terms = { "A 6", "B 12", "C 3" };
             //string[] privacies = { "2021.05.02 A", "2021.07.01 B", "2022.02.19 C", "2022.02.20 C" };
@@ -153,6 +155,8 @@ namespace CodeKata13
             //Level_80.Solution78(56789);
             //Level_80.Solution79(24, 24);
             //Level_80.Solution80(8, 4, 7);
+
+
             //int[] arr = { 2, 6, 8, 14 };
             //Level_90.Solution81(arr);
             //Level_90.Solution82(4);
@@ -163,7 +167,14 @@ namespace CodeKata13
             //Level_90.Solution85(elements);
             //int[] citations = {0, 0, 0, 0, 0};
             //Level_90.Solution86(citations);
-            Level_90.Solution87(3, 2, 5);
+            //Level_90.Solution87(3, 2, 5);
+            //int[,] arr1 = { { 1, 4 }, { 3, 2 }, { 4, 1 } };
+            //int[,] arr2 = { { 3, 3 }, { 3, 3 } };
+            //Level_90.Solution88(arr1, arr2);
+            string[] want = { "banana", "apple", "rice", "pork", "pot" };
+            int[] number = { 3, 2, 2, 2, 1 };
+            string[] discount = { "chicken", "apple", "apple", "banana", "rice", "apple", "pork", "banana", "pork", "rice", "pot", "banana", "apple", "banana" };
+            Level_90.Solution89(want, number, discount);
 
 
 
