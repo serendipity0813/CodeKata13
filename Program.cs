@@ -171,11 +171,12 @@ namespace CodeKata13
             //int[,] arr1 = { { 1, 4 }, { 3, 2 }, { 4, 1 } };
             //int[,] arr2 = { { 3, 3 }, { 3, 3 } };
             //Level_90.Solution88(arr1, arr2);
-            string[] want = { "banana", "apple", "rice", "pork", "pot" };
-            int[] number = { 3, 2, 2, 2, 1 };
-            string[] discount = { "chicken", "apple", "apple", "banana", "rice", "apple", "pork", "banana", "pork", "rice", "pot", "banana", "apple", "banana" };
-            Level_90.Solution89(want, number, discount);
-
+            //string[] want = { "banana", "apple", "rice", "pork", "pot" };
+            //int[] number = { 3, 2, 2, 2, 1 };
+            //string[] discount = { "chicken", "apple", "apple", "banana", "rice", "apple", "pork", "banana", "pork", "rice", "pot", "banana", "apple", "banana" };
+            //Level_90.Solution89(want, number, discount);
+            string[,] clothes = { { "yellow_hat", "headgear" }, { "blue_sunglasses", "eyewear" }, { "green_turban", "headgear" } };
+            Level_90.Solution90(clothes);
 
 
         }

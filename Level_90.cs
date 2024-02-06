@@ -225,7 +225,53 @@ namespace CodeKata13
         public static int Solution89(string[] want, int[] number, string[] discount)
         {
             int answer = 0;
+            int numberSum = 0;
+            bool check = true;
+            Dictionary<string, int> items = new Dictionary<string, int>();
 
+            for(int i=0; i<number.Length; i++)
+            {
+                //넘버합 구하고 딕셔너리 기본값 추가
+                numberSum += number[i];
+                items.Add(want[i], number[i]);
+            }
+
+            for (int i = 0; i < discount.Length - numberSum + 1; i++)
+            {
+                check = true;
+                //딕셔너리 벨류 초기화
+                for (int j = 0; j < want.Length; j++)
+                {
+                    items[want[j]] = number[j];
+                }
+
+
+                for (int j = i; j < numberSum + i; j++)
+                {
+                    if (want.Contains(discount[j]))
+                    {
+                        items[discount[j]]--;
+                    }
+       
+                }
+
+                for (int j = 0; j < want.Length; j++)
+                {
+                    if (items[want[j]] > 0)
+                        check = false;
+                }
+
+                if (check)
+                    answer++;
+            }
+
+            Console.WriteLine(answer);
+            return answer;
+        }
+
+        public static int Solution90(string[,] clothes)
+        { 
+            int answer = 0;
 
             return answer;
         }
