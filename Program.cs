@@ -175,9 +175,16 @@ namespace CodeKata13
             //int[] number = { 3, 2, 2, 2, 1 };
             //string[] discount = { "chicken", "apple", "apple", "banana", "rice", "apple", "pork", "banana", "pork", "rice", "pot", "banana", "apple", "banana" };
             //Level_90.Solution89(want, number, discount);
-            string[,] clothes = { { "yellow_hat", "headgear" }, { "blue_sunglasses", "eyewear" }, { "green_turban", "headgear" } };
-            Level_90.Solution90(clothes);
+            //string[,] clothes = { { "yellow_hat", "headgear" }, { "blue_sunglasses", "eyewear" }, { "green_turban", "headgear" } };
+            //Level_90.Solution90(clothes);
 
+
+
+            int[] progresses = { 93, 30, 55 };
+            int[] speeds = { 1, 30, 5 };
+            Level_100.Solution91(progresses, speeds);
+            int[] priorities = { 2, 1, 3, 2 };
+            Level_100.Solution92(progresses, 2);
 
         }
 

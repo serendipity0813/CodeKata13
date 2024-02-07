@@ -271,8 +271,25 @@ namespace CodeKata13
 
         public static int Solution90(string[,] clothes)
         { 
-            int answer = 0;
+            int answer = 1;
+            Dictionary<string,int> items = new Dictionary<string, int>();
+            
+            for(int i=0; i<clothes.GetLength(0); i++)
+            {
+                if (items.ContainsKey(clothes[i,1]))
+                    items[clothes[i,1]]++;
+                else
+                    items.Add(clothes[i,1], 1);
 
+            }
+
+            foreach (int item in items.Values)
+            {
+                answer = answer * (1 + item);
+            }
+
+            answer--;
+            Console.WriteLine(answer);
             return answer;
         }
 

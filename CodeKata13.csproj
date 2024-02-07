@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Level_100.cs" />
     <Compile Include="Level_20.cs" />
     <Compile Include="Level_10.cs" />
     <Compile Include="Level_30.cs" />
