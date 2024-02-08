@@ -56,7 +56,47 @@ namespace CodeKata13
         public static int Solution92(int[] priorities, int location)
         {
             int answer = 0;
+            int count = 0;
+            int pivot = priorities.Max();
+            int flag = priorities.Length - 1;
+            int num = 0;
+
+            while(pivot != 0)
+            {
+                if (num > priorities.Length - 1)
+                    num = 0;
+
+                if (num == flag)
+                    pivot--;
+
+                if (priorities[num] == pivot)
+                {
+                    priorities[num] = 0;
+                    flag = num;
+                    count++;
+                    if(num == location)
+                    {
+                        answer = count;
+                        break;
+                    }
+
+                }
+                num++;
+
+
+            }
+
+            Console.WriteLine(answer);
             return answer;
+        }
+
+        public static int Solution93(int k, int[,] dungeons)
+        {
+            int answer = -1;
+
+
+            return answer;
+
         }
 
     }
