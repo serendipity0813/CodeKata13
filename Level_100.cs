@@ -8,6 +8,8 @@ namespace CodeKata13
 {
     internal class Level_100
     {
+
+
         public static List<int> Solution91(int[] progresses, int[] speeds)
         {
             List<int> answer = new List<int>();
@@ -89,15 +91,42 @@ namespace CodeKata13
             Console.WriteLine(answer);
             return answer;
         }
+     
 
-        public static int Solution93(int k, int[,] dungeons)
+        public class Solution_93
         {
-            int answer = -1;
+            public static int _answer;
+            public static bool[] _visited;
+            public static int _length;
+
+            public static int Solution93(int k, int[,] dungeons)
+            {
+                _length = dungeons.GetLength(0);
+                bool[] _visited = new bool[_length];
+                DFS(k, _visited, dungeons, 0);
+                Console.WriteLine(_answer);
+                return _answer;
 
 
-            return answer;
+            }
+            public static void DFS(int k, bool[] visited, int[,] dungeons, int count)
+            {
+                for (int i = 0; i < dungeons.GetLength(0); i++)
+                {
+                    if (visited[i] == false && k >= dungeons[i, 0])
+                    {
+                        visited[i] = true;
+                        DFS(k - dungeons[i,1], visited, dungeons, count+1);
+                        visited[i] = false;
+                    }
+                }
 
+                if (count > _answer)
+                    _answer = count;
+
+            }
         }
+       
 
     }
 }

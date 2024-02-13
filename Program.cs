@@ -6,6 +6,7 @@ using System.Management.Instrumentation;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using static CodeKata13.Level_100;
 
 namespace CodeKata13
 {
@@ -186,7 +187,7 @@ namespace CodeKata13
             //int[] priorities = { 1, 1, 9, 1, 1, 1 };
             //Level_100.Solution92(priorities, 0);
             int[,] dungeons = { { 80, 20 }, { 50, 40 }, { 30, 10 } };
-            Level_100.Solution93(80, dungeons);
+            Solution_93.Solution93(80, dungeons);
 
         }
 
