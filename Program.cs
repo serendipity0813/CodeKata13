@@ -186,8 +186,10 @@ namespace CodeKata13
             //Level_100.Solution91(progresses, speeds);
             //int[] priorities = { 1, 1, 9, 1, 1, 1 };
             //Level_100.Solution92(priorities, 0);
-            int[,] dungeons = { { 80, 20 }, { 50, 40 }, { 30, 10 } };
-            Solution_93.Solution93(80, dungeons);
+            //int[,] dungeons = { { 80, 20 }, { 50, 40 }, { 30, 10 } };
+            //Solution_93.Solution93(80, dungeons);
+            int[] numbers = { 1, 1, 1, 1, 1 };
+            Solution_94.Solution94(numbers, 3);
 
         }
 

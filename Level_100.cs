@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -93,7 +95,7 @@ namespace CodeKata13
         }
      
 
-        public class Solution_93
+        public class Solution_93    //DFS문제 - 나중에 다시 풀어보기
         {
             public static int _answer;
             public static bool[] _visited;
@@ -127,6 +129,44 @@ namespace CodeKata13
             }
         }
        
+        public class Solution_94    //DFS문제 - 나중에 다시 풀어보기
+        {
+            public static int _length;
+            public static int _answer;
+
+            public static int Solution94(int[] numbers, int target)
+            {                
+                _answer = 0;
+                _length = numbers.Length;
+
+                DFS(0, 0);
+
+                    void DFS(int sum, int index)
+                    {
+                        if (index == _length)
+                        {
+                            if (sum == target)
+                            {
+                                _answer += 1;
+                            }
+
+                            DFS(sum + numbers[index], index + 1);
+                            DFS(sum - numbers[index], index + 1);
+                        }
+                 
+                    }
+
+                Console.Write(_answer);
+                return _answer;
+
+            }
+
+          
+              
+
+            
+
+        }
 
     }
 }
