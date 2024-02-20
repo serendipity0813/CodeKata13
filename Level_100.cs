@@ -98,7 +98,6 @@ namespace CodeKata13
         public class Solution_93    //DFS문제 - 나중에 다시 풀어보기
         {
             public static int _answer;
-            public static bool[] _visited;
             public static int _length;
 
             public static int Solution93(int k, int[,] dungeons)
@@ -129,7 +128,7 @@ namespace CodeKata13
             }
         }
        
-        public class Solution_94    //DFS문제 - 나중에 다시 풀어보기
+        public class Solution_94    //DFS문제 -  풀어보기
         {
             public static int _length;
             public static int _answer;
@@ -160,13 +159,57 @@ namespace CodeKata13
                 return _answer;
 
             }
-
-          
-              
-
+                    
             
 
         }
+
+        public static int Solution95(int n, int k)  //카카오 입사 - 풀어보기
+        {
+            int answer = -1;
+            return answer;
+        }
+
+        public static int[] Solution96(int[] fees, string[] records) //카카오 입사 - 풀어보기
+        {
+            int[] answer = new int[] { };
+            return answer;
+        }
+
+        public static int Solution97(string word)
+        {
+            int answer = 0;
+            int num = 3906;
+
+            for(int i=0; i< word.Length; i++)
+            {
+                num = num / 5;
+
+                switch(word[i])
+                {
+                    case 'A' :
+                        answer += 1;
+                            break;
+                    case 'E':
+                        answer += num + 1;
+                        break;
+                    case 'I':
+                        answer += num * 2 + 1;
+                        break;
+                    case 'O':
+                        answer += num * 3 + 1;
+                        break;
+                    case 'U':
+                        answer += num * 4 + 1;
+                        break;
+
+                }
+            }
+
+            Console.WriteLine(answer);
+            return answer;
+        }
+
 
     }
 }
