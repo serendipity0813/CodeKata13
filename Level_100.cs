@@ -210,6 +210,59 @@ namespace CodeKata13
             return answer;
         }
 
+        public static int[] Solution98(int[] numbers)
+        {
+            int[] answer = new int[numbers.Length];
+
+            answer[answer.Length - 1] = -1;
+
+            for (int i= numbers.Length - 2; i >= 0; i--)
+            { 
+
+                if (i != 0 && (numbers[i] == numbers[i + 1]))
+                {
+                    answer[i] = answer[i+1];
+                }
+                else
+                {
+
+                    for (int j = i + 1; j < numbers.Length; j++)
+                    {
+
+                        if (numbers[j] > numbers[i])
+                        {
+                            answer[i] = numbers[j];
+                            break;
+                        }
+                        else if (numbers[j] <= numbers[i])   
+                        {
+                            if (answer[j] == -1)
+                            {
+                                answer[i] = -1;
+                                break;
+                            }
+                            else if (answer[j] > numbers[i])
+                            {
+                                answer[i] = answer[j];
+                                break;
+                            }
+                        }
+
+                    }
+                    if (answer[i] == 0)
+                        answer[i] = -1;
+                }
+
+            }
+
+            for (int j = 0; j < numbers.Length; j++)
+            {
+                Console.Write(answer[j]);
+            }
+            return answer;
+        }
+
+
 
     }
 }
