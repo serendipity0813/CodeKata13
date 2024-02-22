@@ -195,8 +195,10 @@ namespace CodeKata13
             //string[] records = { "05:34 5961 IN", "06:00 0000 IN", "06:34 0000 OUT", "07:59 5961 OUT", "07:59 0148 IN", "18:59 0000 IN", "19:09 0148 OUT", "22:59 5961 IN", "23:00 5961 OUT" };
             //Level_100.Solution96(fees, records);
             //Level_100.Solution97("EIO");
-            int[] numbers = { 9, 1, 5, 3, 6, 2 };
-            Level_100.Solution98(numbers);
+            //int[] numbers = { 9, 1, 5, 3, 6, 2 };
+            //Level_100.Solution98(numbers);
+            int[] topping = { 1, 2, 1, 3, 1, 4, 1, 2 };
+            Level_100.Solution99(topping);
 
         }
 

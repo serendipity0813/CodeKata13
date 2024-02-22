@@ -262,7 +262,46 @@ namespace CodeKata13
             return answer;
         }
 
+        public static int Solution99(int[] topping)
+        {
+            int answer = 0;
+            Dictionary<int, int> topping1 = new Dictionary<int, int>();
+            Dictionary<int, int> topping2 = new Dictionary<int, int>();
 
+            for(int i=0; i< topping.Length; i++)
+            {
+                if (topping1.ContainsKey(topping[i]))
+                    topping1[topping[i]]++;
+                else
+                 topping1.Add(topping[i], 1);
+            }
+
+            for(int  j = 0; j < topping.Length; j++)
+            {
+                if (topping2.ContainsKey(topping[j]))
+                    topping2[topping[j]]++;
+                else
+                    topping2.Add(topping[j], 1);
+
+                if (topping1.ContainsKey(topping[j]))
+                {
+                    topping1[topping[j]]--;
+
+                    if(topping1[topping[j]] == 0)
+                        topping1.Remove(topping[j]);
+                }
+ 
+                if (topping1.Count == topping2.Count) 
+                    answer++;
+
+
+            }
+
+
+
+            Console.WriteLine(answer);
+            return answer;
+        }
 
     }
 }
