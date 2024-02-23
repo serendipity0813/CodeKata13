@@ -303,5 +303,82 @@ namespace CodeKata13
             return answer;
         }
 
+        public static int Solution100(int x, int y, int n)  //풀이 마무리 X
+        {
+            int answer = 1000;
+            int start = 0;
+            int count = 0;
+            int divide = x;
+            int remain = y;
+            bool flag = false;
+
+            while (true)
+            {
+                if(remain == divide)
+                {
+                    if (start < answer)
+                    {
+                        answer = start;
+                    }
+                    break;
+                }
+
+                if(divide > y)
+                    break;
+
+                if(remain % divide == 0)
+                {
+                    count = start;
+                    remain = remain / divide;
+  
+                    while (remain % 2 == 0)
+                    {
+                        if (remain == 2)
+                        {
+                            flag = true;
+                            count++;
+                            break;
+                        }
+                        remain = remain / 2;
+                        count++;
+                     
+                    }
+
+                    while (remain % 3 == 0)
+                    {
+                        if (remain == 3)
+                        {
+                            flag = true;
+                            count++;
+                            break;
+                        }
+                        remain = remain / 3;
+                        count++;
+                    }
+                  
+
+                }
+                
+                if(count < answer && flag == true)
+                {
+                    answer = count;
+                }
+
+                remain = y;
+                flag = false;
+                divide += n;
+                start++;
+
+
+            }
+
+            if (answer == 1000)
+                answer = -1;
+
+            Console.WriteLine(answer);
+            return answer;
+
+        }
+
     }
 }

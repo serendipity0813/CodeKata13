@@ -197,8 +197,9 @@ namespace CodeKata13
             //Level_100.Solution97("EIO");
             //int[] numbers = { 9, 1, 5, 3, 6, 2 };
             //Level_100.Solution98(numbers);
-            int[] topping = { 1, 2, 1, 3, 1, 4, 1, 2 };
-            Level_100.Solution99(topping);
+            //int[] topping = { 1, 2, 1, 3, 1, 4, 1, 2 };
+            //Level_100.Solution99(topping);
+            Level_100.Solution100(5, 1000000, 5);
 
         }
 
