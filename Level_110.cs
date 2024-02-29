@@ -54,6 +54,50 @@ namespace CodeKata13
         public static int Solution102(int bridge_length, int weight, int[] truck_weights)
         {
             int answer = 0;
+            int truckCount = 0;
+            int timeCount = 0;
+            int queueSum = 0;
+            
+
+
+            Queue<int> queue = new Queue<int>();
+
+            //다리 위 무게 체크
+            //마지막 시간 계산
+
+
+            while(true)
+            {
+
+                if (queue.Count == bridge_length)
+                {
+                    queueSum -= queue.Dequeue();
+                }
+                                
+                if(queueSum + truck_weights[truckCount] <= weight)
+                {
+                    queue.Enqueue(truck_weights[truckCount]);
+                    queueSum += truck_weights[truckCount];
+                    truckCount++;
+                }
+                else
+                {
+                    queue.Enqueue(0);
+                }
+
+                if (truckCount == truck_weights.Length)
+                {
+                    timeCount += bridge_length+1;
+                    break;
+                }
+                else
+                    timeCount++;
+                
+
+            }
+
+            answer = timeCount;
+            Console.WriteLine(answer);
             return answer;
         }
 

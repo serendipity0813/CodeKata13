@@ -201,8 +201,8 @@ namespace CodeKata13
             //Level_100.Solution99(topping);
             //Level_100.Solution100(5, 1000000, 5);
 
-            long[] numbers = {3, 7};
-            Level_110.Solution101(numbers);
+            //long[] numbers = {3, 7};
+            //Level_110.Solution101(numbers);
             int[] truck_weights = { 7, 4, 5, 6 };
             Level_110.Solution102(2, 10, truck_weights);
 
