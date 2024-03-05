@@ -62,10 +62,6 @@ namespace CodeKata13
 
             Queue<int> queue = new Queue<int>();
 
-            //다리 위 무게 체크
-            //마지막 시간 계산
-
-
             while(true)
             {
 
@@ -100,6 +96,25 @@ namespace CodeKata13
             Console.WriteLine(answer);
             return answer;
         }
+
+        public static string Solution103(int[] numbers) //정렬 - 가장큰 수  - 풀어야 함
+        {
+            string answer = "";
+          
+            return answer;
+        }
+
+        public class Solution_104   //완전탐색 - 소수찾기 - 풀어야 함
+        {
+            public static int Solution104(string numbers) 
+            {
+                return 1;
+
+            }
+        }
+
+
+
 
     }
 }
