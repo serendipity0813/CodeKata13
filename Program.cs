@@ -5,9 +5,7 @@ using System.Linq;
 using System.Management.Instrumentation;
 using System.Reflection.Emit;
 using System.Text;
-using System.Threading.Tasks;
-using static CodeKata13.Level_100;
-using static CodeKata13.Level_110;
+
 
 namespace CodeKata13
 {
@@ -15,10 +13,9 @@ namespace CodeKata13
     {
         static void Main(string[] args)
         {
-          
-            Level_110.Solution_104.Solution104("17");
-
+            string Mystring = "He11oWor1d";
+            string overstring = "lloWorl";
+            ProgrammersBasic.Solution(Mystring, overstring, 2);
         }
-
     }
 }
