@@ -13,9 +13,7 @@ namespace CodeKata13
     {
         static void Main(string[] args)
         {
-            string Mystring = "He11oWor1d";
-            string overstring = "lloWorl";
-            ProgrammersBasic.Solution(Mystring, overstring, 2);
+            ProgrammersBasic.Solution(5, 555);
         }
     }
 }

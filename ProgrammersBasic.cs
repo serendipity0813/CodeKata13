@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace CodeKata13
 {
@@ -111,6 +112,64 @@ namespace CodeKata13
             return answer;
         }
 
+        public static int Solution19(string ineq, string eq, int n, int m)
+        {
+            int answer = 0;
+
+            if(n==m)
+            {
+                if (eq == "=")
+                {
+                    answer = 1;
+                }
+                else
+                    answer = 0;
+            }
+            else
+            {
+                if (n < m && ineq == "<")
+                    answer = 1;
+                else if (n > m && ineq == ">")
+                    answer = 1;
+                else
+                    answer = 0;
+            }
+
+            Console.WriteLine(answer);
+            return answer;
+        }
+
+        public static string Solution21(string code)
+        {
+            string answer = "";
+            string ret = "";
+            int mode = -1;
+
+            for(int i=0; i<code.Length; i++)
+            {
+                if (code[i] == '1')
+                    mode = -mode;
+                else if(mode < 0)
+                {
+                    if (i % 2 == 0)
+                        ret += code[i].ToString();
+                }
+                else if(mode > 0)
+                {
+                    if (i % 2 == 1)
+                        ret += code[i].ToString();
+                }
+            }
+
+            if (ret == "")
+                answer = "EMPTY";
+            else
+                answer = ret;
+
+            Console.WriteLine (answer);
+            return answer;
+        }
+
         public static int Solution24(int[] num_list)
         {
             int answer = 0;
@@ -135,6 +194,75 @@ namespace CodeKata13
             }
 
             Console.WriteLine(answer);
+            return answer;
+        }
+
+        public static int[] Solution30(int[] arr, int[,] queries)
+        {
+            int length = queries.GetLength(0);
+            int[] answer = new int[length];
+            int pivot = -1;
+
+            for (int i=0; i<length; i++)
+            {
+                pivot = -1;
+                for(int j = queries[i,0]; j <= queries[i,1]; j++)
+                {
+                    if (arr[j] > queries[i, 2])
+                    {
+                        if (pivot == -1)
+                            pivot = arr[j];
+                        else if (arr[j] < pivot)
+                            pivot = arr[j];
+                                
+                    }
+                }
+                answer[i] = pivot;
+            }
+
+            for(int i=0; i<length; i++)
+            {
+                Console.WriteLine(answer[i]);
+            }
+
+            return answer;
+        }
+
+        public static List<int> Solution(int l, int r)
+        {
+            List<int> answer = new List<int>();
+            string targetNumber = "";
+            bool flag = true;
+
+            for(int i=l; i<= r; i++)
+            {
+                flag = true;
+                targetNumber = i.ToString();
+                for(int j=0; j<targetNumber.Length; j++)
+                {
+                    if (targetNumber[j] != '5' && targetNumber[j] != '0')
+                    {
+                        flag = false;
+                        break;
+                    }
+                           
+                }
+
+                if(flag)
+                {
+                    answer.Add(i);
+                }
+                
+            }
+
+            if(answer.Count == 0)
+                answer.Add(-1);
+
+            foreach(int i in answer)
+            {
+                Console.WriteLine(i);
+            }
+
             return answer;
         }
 
