@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 
 namespace CodeKata13
 {
@@ -228,7 +229,7 @@ namespace CodeKata13
             return answer;
         }
 
-        public static List<int> Solution(int l, int r)
+        public static List<int> Solution32(int l, int r)
         {
             List<int> answer = new List<int>();
             string targetNumber = "";
@@ -264,6 +265,89 @@ namespace CodeKata13
             }
 
             return answer;
+        }
+
+        public static int Solution(int a, int b, int c, int d)
+        {
+            int answer = 0;      
+            int[] nums = { a, b, c, d };
+            int[] nums2 = { a, b, c, d };
+            int[] count = { 0, 0, 0, 0 };
+
+            for(int i=0; i<4; i++)
+            {
+                if (nums[i] != 0)
+                    count[i]++;
+                for(int j = i+1; j<4; j++)
+                {
+                    if (nums[i] == nums[j] && nums[j] != 0)
+                    {
+                        count[i]++;
+                        nums[j] = 0;
+                    }
+                }
+            }
+
+            for(int i=0; i<4; i++)
+            {
+                if (count[i] == 4)
+                {
+                    answer = nums[i] * 1111;
+                }
+                else if (count[i] == 3)
+                {
+                    for (int j = 0; j < 4; j++)
+                    {
+                        if (nums2[j] != nums2[i])
+                        {
+                            answer = (10 * nums2[i] + nums2[j]);
+                            answer *= answer;
+                        }
+                    }
+                }
+                else if (count[i] == 2 && i == 0 && count[i+1] != 1 && count[i + 2] != 1)
+                {
+                    for (int j = 0; j < 4; j++)
+                    {
+                        if (nums2[i] != nums2[j])
+                        {
+                            if (nums2[i] > nums2[j])
+                                answer = (nums2[i] + nums2[j]) * (nums2[i] - nums2[j]);
+                            else
+                                answer = (nums2[j] + nums2[i]) * (nums2[j] - nums2[i]);
+                            break;
+                        }
+                       
+                    }
+
+                    break;
+                }
+                else if(count[i] == 2)
+                {
+                    answer = 1;
+                    for(int j=0; j<4; j++)
+                    {
+                        if (nums2[i] != nums2[j])
+                            answer *= nums2[j];
+                    }
+                }
+
+            }
+
+            if(answer == 0)
+            {
+                answer = 10;
+                for (int j = 0; j < 4; j++)
+                {
+                    if (nums2[j] < answer)
+                        answer = nums2[j];
+                }
+            }
+
+            Console.WriteLine(answer);
+            return answer;
+
+
         }
 
     }

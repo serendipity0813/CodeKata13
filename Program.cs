@@ -13,7 +13,7 @@ namespace CodeKata13
     {
         static void Main(string[] args)
         {
-            ProgrammersBasic.Solution(5, 555);
+            ProgrammersBasic.Solution(3, 3,4, 5);
         }
     }
 }
