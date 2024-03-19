@@ -13,7 +13,8 @@ namespace CodeKata13
     {
         static void Main(string[] args)
         {
-            ProgrammersBasic.Solution(3, 3,4, 5);
+            int[,] queries = { { 2, 3 }, { 0, 7 }, { 5, 9 }, { 6, 10 } };
+            ProgrammersBasic.Solution("rermgorpsam", queries);
         }
     }
 }

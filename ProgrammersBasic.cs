@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
+using System.Linq;
 
 namespace CodeKata13
 {
@@ -267,7 +268,7 @@ namespace CodeKata13
             return answer;
         }
 
-        public static int Solution(int a, int b, int c, int d)
+        public static int Solution37(int a, int b, int c, int d)
         {
             int answer = 0;      
             int[] nums = { a, b, c, d };
@@ -347,6 +348,43 @@ namespace CodeKata13
             Console.WriteLine(answer);
             return answer;
 
+
+        }
+
+        public static string Solution(string my_string, int[,] queries)
+        {
+            string answer = my_string;
+            string str1 = "";
+            string str2 = "";
+            string str3 = "";
+            char[] words = { };
+
+            for (int i=0; i < queries.GetLength(0); i++)
+            {
+                if (queries[i, 0] != 0)
+                    str1 = answer.Substring(0, queries[i, 0]);
+                else
+                    str1 = "";
+
+                str2 = answer.Substring(queries[i, 0], queries[i, 1] - queries[i,0] + 1);
+                words = str2.Reverse().ToArray();
+                str2 = "";
+                for(int j=0; j<words.Length; j++)
+                {
+                    str2 += words[j].ToString();
+                }
+
+                if (queries[i, 1] + 1 < my_string.Length)
+                    str3 = answer.Substring(queries[i, 1] + 1, answer.Length - queries[i, 1] - 1);
+                else
+                    str3 = "";
+
+                answer = str1 + str2 + str3;
+                Console.WriteLine(answer);
+            }
+
+            Console.WriteLine(answer);
+            return answer;
 
         }
 
