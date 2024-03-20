@@ -351,7 +351,7 @@ namespace CodeKata13
 
         }
 
-        public static string Solution(string my_string, int[,] queries)
+        public static string Solution40(string my_string, int[,] queries)
         {
             string answer = my_string;
             string str1 = "";
@@ -388,6 +388,55 @@ namespace CodeKata13
 
         }
 
+        public static List<int> Solution60(int[] arr, int[] query)
+        {
+            List<int> answer = new List<int>();
+            int count = 0;
+            int head = 0;
+            int tail = 0;
+
+            for (int i = 0; i < query.Length; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    for(int j = query[i] + head + 1; j<arr.Length - tail; j++ )
+                    {
+                        Console.Write(arr[j]);
+                        arr[j] = -1;
+                        count++;
+                    }
+                    tail += count;
+                    count = 0;
+                }
+                else if (i % 2 != 0)
+                {
+                    for (int j = 0+head; j < query[i]+head; j++)
+                    {
+                        Console.Write(arr[j]);
+                        arr[j] = -1;
+                        count++;
+                    }
+                    head += count;
+                    count = 0;
+                }
+
+                Console.WriteLine();
+            }
+
+            for(int i=head; i< arr.Length - tail; i++)
+            {
+                answer.Add(arr[i]);
+                Console.Write(arr[i]);
+            }
+
+            return answer;
+        }
+
+        public static int[] Solution95(int[] arr, int k)
+        {
+            int[] answer = new int[] { };
+            return answer;
+        }
     }
 
 }
