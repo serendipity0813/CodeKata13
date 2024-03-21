@@ -13,8 +13,8 @@ namespace CodeKata13
     {
         static void Main(string[] args)
         {
-            int[] arr = {0, 1, 1, 2, 2, 3};
-            ProgrammersBasic.Solution95(arr, 3);
+            string[] picture = { ".xx...xx.", "x..x.x..x", "x...x...x", ".x.....x.", "..x...x..", "...x.x...", "....x...." };
+            ProgrammersBasic.Solution117(picture,2);
         }
     }
 }

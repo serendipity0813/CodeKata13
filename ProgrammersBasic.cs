@@ -432,11 +432,83 @@ namespace CodeKata13
             return answer;
         }
 
-        public static int[] Solution95(int[] arr, int k)
+        public static List<int> Solution95(int[] arr, int k)
         {
-            int[] answer = new int[] { };
+            List<int> answer = new List<int>();
+
+            for(int i=0; i<arr.Length; i++)
+            {
+                if (!answer.Contains(arr[i]))
+                    answer.Add(arr[i]);
+
+                if (answer.Count == k)
+                    break;
+            }
+
+            if(answer.Count < k)
+            {
+                int num = k-answer.Count;
+                for(int i=0; i<num; i++)
+                {
+                    answer.Add(-1);
+                }
+            }
+
+            foreach (int i in answer)
+                Console.WriteLine(i);
+
             return answer;
         }
+
+        public static int Solution102(int[] rank, bool[] attendance)
+        {
+            int answer = 0;
+            int count = 0;
+            int[] top = new int[3];
+
+            Dictionary<int, bool> dictionary = new Dictionary<int, bool>();
+
+            Dictionary<int, bool> sortdict = new Dictionary<int, bool>();
+
+            for (int i=0; i<rank.Length; i++)
+            {
+                dictionary.Add(rank[i], attendance[i]);
+            }
+
+            List <int> arr = dictionary.Keys.ToList();
+            arr.Sort();
+
+            for (int i = 0; i < arr.Count; i++)
+            {
+                sortdict.Add(arr[i], dictionary[arr[i]]);
+                if(dictionary[arr[i]] && count < 3)
+                {
+                    for(int j=0; j<rank.Length; j++)
+                    {
+                        if (rank[j] == arr[i])
+                        {
+                            top[count] = j;
+                            count++;
+                        }
+                    }
+                }
+
+                if (count >= 3)
+                    break;
+            }
+
+            answer = top[0] * 10000 + top[1] * 100 + top[2];
+            Console.WriteLine(answer);
+            return answer;
+        }
+
+        public static string[] Solution117(string[] picture, int k)
+        {
+            string[] answer = new string[] { };
+            return answer;
+        }
+
+
     }
 
 }
