@@ -504,7 +504,37 @@ namespace CodeKata13
 
         public static string[] Solution117(string[] picture, int k)
         {
-            string[] answer = new string[] { };
+            string[] answer = new string[picture.Length * k];
+
+            for(int i=0; i<picture.Length * k; i++)
+            {
+                char[] words = new char[picture[i / k].Length];
+                for (int j = 0; j < words.Length; j++)
+                {
+                    words[j] = picture[i / k][j];
+                }
+
+                for (int j = 0; j < words.Length; j++)
+                {
+                    for (int n = 0; n < k; n++)
+                    {
+                        answer[i] += words[j];
+                    }
+                        
+                }
+
+            }
+
+            for(int i=0; i<answer.Length; i++)
+            {
+                Console.WriteLine(answer[i]);
+            }
+            return answer;
+        }
+
+        public static int[,] Solution121(int n)
+        {
+            int[,] answer = new int[,] { { } };
             return answer;
         }
 

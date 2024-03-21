@@ -13,8 +13,7 @@ namespace CodeKata13
     {
         static void Main(string[] args)
         {
-            string[] picture = { ".xx...xx.", "x..x.x..x", "x...x...x", ".x.....x.", "..x...x..", "...x.x...", "....x...." };
-            ProgrammersBasic.Solution117(picture,2);
+            ProgrammersBasic.Solution121(4);
         }
     }
 }
