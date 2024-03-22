@@ -11,9 +11,15 @@ namespace CodeKata13
 {
     public class Program
     {
-        static void Main(string[] args)
+
+        public static void Main(string[] args)
         {
-            ProgrammersBasic.Solution121(4);
+            //ProgrammersBasic.Solution121(4);
+            Note obj = new Note();
+
+            obj.TestMethod();
         }
+
     }
+
 }
