@@ -14,10 +14,7 @@ namespace CodeKata13
 
         public static void Main(string[] args)
         {
-            //ProgrammersBasic.Solution121(4);
-            Note obj = new Note();
-
-            obj.TestMethod();
+            ProgrammersBasic.Solution121(9);
         }
 
     }

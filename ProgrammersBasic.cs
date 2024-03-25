@@ -534,7 +534,52 @@ namespace CodeKata13
 
         public static int[,] Solution121(int n)
         {
-            int[,] answer = new int[,] { { } };
+            int[,] answer = new int[n,n];
+            int x = 0;
+            int y = 0;
+            int round = 0;
+            bool line = true;
+            bool col = true;
+
+            for(int i=0; i<n*n; i++)
+            {
+                answer[x, y] = i+1;
+                if (y < n && line == true)
+                {
+                    y++;
+                    if (y == n-round - 1)
+                        line = false;
+                }
+                else if (x < n && col == true)
+                {
+                    x++;
+                    if (x == n-round - 1)
+                        col = false;
+                }
+                else if (y > round && line == false)
+                {
+                    y--;
+                }
+                else if (x > round && col == false)
+                {
+                    x--;
+                    if (x == round+1)
+                    {
+                        line = true;
+                        col = true;
+                        round++;
+                    }                   
+                }
+            }
+
+            for(int i=0; i<n; i++)
+            {
+                Console.WriteLine();
+                for(int j=0; j<n; j++)
+                {
+                    Console.Write(answer[i,j] + " ");
+                }
+            }
             return answer;
         }
 
