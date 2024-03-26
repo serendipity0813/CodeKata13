@@ -58,6 +58,7 @@
     <Compile Include="Note.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProgrammersBasic.cs" />
+    <Compile Include="ProgrammersNormal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

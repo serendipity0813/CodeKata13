@@ -583,6 +583,34 @@ namespace CodeKata13
             return answer;
         }
 
+        public static int[,] Solution123(int[,] arr)
+        {
+            int length = 0;
+            if(arr.GetLength(0) > arr.GetLength(1))
+                length = arr.GetLength(0);
+            else if(arr.GetLength(0) <= arr.GetLength(1))
+                length = arr.GetLength(1);
+
+            int[,] answer = new int[length,length];
+
+            for(int i=0; i<length; i++)
+            {
+                for(int j=0; j<length; j++)
+                {
+                    if (i >= arr.GetLength(0) || j >= arr.GetLength(1))
+                        answer[i, j] = 0;
+                    else
+                        answer[i, j] = arr[i, j];
+
+                    Console.Write(answer[i,j] + " ");
+                }
+                Console.WriteLine();
+            }
+
+            return answer;
+        }
+
+
 
     }
 
