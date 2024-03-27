@@ -14,8 +14,9 @@ namespace CodeKata13
 
         public static void Main(string[] args)
         {
-
-            ProgrammersNormal.Solution78(3, 2);
+            string[] spell = { "s", "o", "m", "d" };
+            string[] dic = {"moos", "dzx", "smm", "sunmmo", "som" };
+            ProgrammersNormal.Solution81(spell, dic);   
         }
 
     }
