@@ -1,4 +1,5 @@
 using System;
+using System.Security.Cryptography;
 
 namespace CodeKata13
 {
@@ -10,7 +11,7 @@ namespace CodeKata13
             return answer;
         }
 
-        public static int Solution81(string[] spell, string[] dic)
+        public static int Solution80(string[] spell, string[] dic)
         {
             int answer = 2;
             string str1 = "";
@@ -50,6 +51,35 @@ namespace CodeKata13
 
         }
 
+        public static int Solution81(int M, int N)
+        {
+            int answer = 0;
+            int min = 0;
+            int dif = 0;
+
+            if (M < N)
+            {
+                min = M;
+                dif = N - M;
+            }
+              
+            else if(N < M)
+            {
+                min = N;
+                dif = M - N;
+            }
+         
+            else
+            {
+                min = N;
+                dif = 0;
+            }
+
+            answer = (min * min - 1) + dif * min; 
+
+            
+            return answer;
+        }
 
     }
 
