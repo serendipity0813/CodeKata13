@@ -81,6 +81,28 @@ namespace CodeKata13
             return answer;
         }
 
+        public static int[] solution82(string[] keyinput, int[] board)
+        {
+            int[] answer = new int[] {0, 0};
+            int xnum = (board[0] - 1 )/ 2;
+            int ynum = (board[1] - 1) / 2;
+
+            for(int i=0; i<keyinput.Length; i++)
+            {
+                if (keyinput[i] == "up" && answer[1] + 1 <= ynum)
+                    answer[1]++;
+                else if (keyinput[i] == "down" && answer[1] - 1 >= -ynum)
+                    answer[1]--;
+                else if (keyinput[i] == "left" && answer[0] - 1 >= -xnum)
+                    answer[0]--;
+                else if (keyinput[i] == "right" && answer[0] + 1 <= xnum)
+                    answer[0]++;
+            }
+                
+
+            return answer;
+        }
+
     }
 
 
