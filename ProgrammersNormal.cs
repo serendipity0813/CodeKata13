@@ -81,7 +81,7 @@ namespace CodeKata13
             return answer;
         }
 
-        public static int[] solution82(string[] keyinput, int[] board)
+        public static int[] Solution82(string[] keyinput, int[] board)
         {
             int[] answer = new int[] {0, 0};
             int xnum = (board[0] - 1 )/ 2;
@@ -100,6 +100,44 @@ namespace CodeKata13
             }
                 
 
+            return answer;
+        }
+
+        public static int Solution83(int[,] dots)
+        {
+            int answer = 0;
+            int xnum = 0;
+            int ynum = 0;
+
+            if (dots[0, 0] != dots[1, 0])
+            {
+                xnum = dots[1, 0] - dots[0,0];
+                if (xnum < 0)
+                    xnum = -xnum;
+            }
+            else
+            {
+                xnum = dots[2, 0] - dots[0, 0];
+                if (xnum < 0)
+                    xnum = -xnum;
+            }
+
+
+            if (dots[0, 1] != dots[1, 1])
+            {
+                ynum = dots[1, 1] - dots[0, 1];
+                if (ynum < 0)
+                    ynum = -ynum;
+            }
+            else
+            {
+                ynum = dots[2, 1] - dots[0, 1];
+                if (ynum < 0)
+                    ynum = -ynum;
+            }
+
+            answer = xnum * ynum;
+            Console.WriteLine(answer);
             return answer;
         }
 

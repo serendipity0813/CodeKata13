@@ -14,9 +14,8 @@ namespace CodeKata13
 
         public static void Main(string[] args)
         {
-            string[] keyInput = { "left", "right", "up", "right", "right" };
-            int[] board = { 11, 11 };
-            ProgrammersNormal.Solution81(2, 2);   
+            int[,] dots = { { 1, 1 }, {2, 1}, { 2, 2 }, { 1, 2 } };
+            ProgrammersNormal.Solution83(dots);   
         }
 
     }
