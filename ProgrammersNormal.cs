@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 
 namespace CodeKata13
@@ -138,6 +139,34 @@ namespace CodeKata13
 
             answer = xnum * ynum;
             Console.WriteLine(answer);
+            return answer;
+        }
+
+        public static string Solution84(string[] id_pw, string[,] db)
+        {
+            string answer = "fail";
+
+            for (int i = 0; i < db.GetLength(0); i++)
+            {
+                if (id_pw[0] == db[i,0])
+                {
+                    if (id_pw[1] == db[i, 1])
+                    {
+                        answer = "login";
+                        break;
+                    }
+
+                    else
+                        answer = "wrong pw";
+                }
+            }
+
+            return answer;
+        }
+
+        public static int[] Solution85(int[,] score)
+        {
+            int[] answer = new int[] { };
             return answer;
         }
 

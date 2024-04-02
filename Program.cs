@@ -14,8 +14,8 @@ namespace CodeKata13
 
         public static void Main(string[] args)
         {
-            int[,] dots = { { 1, 1 }, {2, 1}, { 2, 2 }, { 1, 2 } };
-            ProgrammersNormal.Solution83(dots);   
+            int[,] score = { { 80, 70 }, { 90, 50 }, { 40, 70 }, { 50, 80 } };
+            ProgrammersNormal.Solution85(score);   
         }
 
     }
