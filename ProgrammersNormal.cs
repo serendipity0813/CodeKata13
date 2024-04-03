@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.ExceptionServices;
 using System.Security.Cryptography;
 
 namespace CodeKata13
@@ -166,7 +168,37 @@ namespace CodeKata13
 
         public static int[] Solution85(int[,] score)
         {
-            int[] answer = new int[] { };
+            int length = score.GetLength(0);
+            int[] answer = new int[length];
+            float[,] rank = new float[length, 2];
+            float[] value = new float[length];
+            
+            for(int i=0; i < length; i++)
+            {
+                value[i] = (score[i,0] + score[i,1]) / 2 + (score[i, 0] + score[i, 1]) % 2;
+                rank[i,0] = i;
+                rank[i, 1] = value[i];
+            }
+
+            Array.Sort(value);
+            Array.Reverse(value);
+
+            for (int i = 0; i < length; i++)
+            {
+
+                for(int j=0; j < length; j++)
+                {
+                    if (value[i] == rank[j, 1] && answer[(int)rank[j, 0]] == 0)
+                        answer[(int)rank[j,0]] = i+1;
+                }
+
+            }
+
+            for (int i = 0; i < length; i++)
+            {
+                Console.WriteLine(answer[i]);
+            }
+
             return answer;
         }
 
