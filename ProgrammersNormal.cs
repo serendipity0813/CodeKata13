@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Runtime.ExceptionServices;
 using System.Security.Cryptography;
@@ -199,6 +200,34 @@ namespace CodeKata13
                 Console.WriteLine(answer[i]);
             }
 
+            return answer;
+        }
+
+        public static int Solution86(int chicken)
+        {
+            int answer = 0;           
+            int coupon = 0;
+            int bonus = 0;
+
+            bool isChange = true;
+
+            while(isChange)
+            {
+                coupon += chicken;
+                chicken = 0;
+                if (coupon >= 10)
+                {
+                    bonus = coupon / 10;
+                    coupon -= bonus * 10;
+                    chicken += bonus;
+                    answer += bonus;
+                }
+                else
+                    isChange = false;
+
+            }
+
+            Console.WriteLine(answer);
             return answer;
         }
 
