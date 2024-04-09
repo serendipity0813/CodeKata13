@@ -203,7 +203,91 @@ namespace CodeKata13
             return answer;
         }
 
-        public static int Solution86(int chicken)
+        public static int Solution86(int n)
+        {
+            int before = 0;
+            int answer = n;
+            int count = 0;
+            int dif = 100;
+            
+            while(dif != 0)
+            {
+                for (int i = before + 1; i <= answer; i++)
+                {
+                    if (i % 3 == 0)
+                        count++;
+                    else if (i / 10 == 13)
+                        count++;
+                    else if (i / 10 == 3)
+                        count++;
+                    else if (i % 10 == 3)
+                        count++;
+                }
+
+                before = answer;
+                answer += count;
+                count = 0;
+                dif = answer - before;
+            }
+
+            Console.WriteLine(answer);
+            return answer;
+
+        }
+
+        public static int Solution87(int a, int b)
+        {
+            int answer = 0;
+            int max = 0;
+            int div = 0;
+
+            if (a > b)
+                max = a;
+            else
+                max = b;
+
+            for(int i=1; i<=max; i++)
+            {
+                if (a % i == 0 && b % i == 0)
+                    div = i;
+            }
+
+         
+            b = b / div;
+
+            while(b > 0)
+            {
+                if (b == 1)
+                {
+                    b = 0;
+                    answer = 1;
+                }
+                else if (b % 10 == 0)
+                {
+                    b = b / 10;
+                }
+                else if (b % 2 == 0)
+                {
+                    b = b / 2;
+                }
+                else if (b % 5 == 0)
+                {
+                    b = b / 5;
+                }
+                else
+                {
+                    b = 0;
+                    answer =2;
+                }
+             
+            }
+         
+
+            Console.WriteLine(answer);
+            return answer;
+        }
+
+        public static int Solution88(int chicken)
         {
             int answer = 0;           
             int coupon = 0;
@@ -230,6 +314,8 @@ namespace CodeKata13
             Console.WriteLine(answer);
             return answer;
         }
+
+
 
     }
 
