@@ -315,7 +315,40 @@ namespace CodeKata13
             return answer;
         }
 
+        public static int Solution89(string A, string B)
+        {
+            int answer = -1;
+            string str = "";
+            char[] words = A.ToCharArray();
 
+            for(int i=0; i<words.Length; i++)
+            {
+                str = "";
+                for(int j=0; j<words.Length; j++)
+                {
+                    if (i+j <= words.Length - 1)                
+                        str += words[i + j];
+                    else
+                        str += words[i+j - words.Length];
+                }
+                Console.WriteLine(str);
+
+                if (str == B)
+                {
+                    if (i == 0)
+                        answer = 0;
+                    else
+                    {
+                        answer = words.Length - i;
+                    }                     
+            
+                }                 
+                  
+            }
+
+            Console.WriteLine(answer);
+            return answer;
+        }
 
     }
 

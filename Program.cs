@@ -14,7 +14,7 @@ namespace CodeKata13
 
         public static void Main(string[] args)
         {
-            ProgrammersNormal.Solution87(6,72);   
+            ProgrammersNormal.Solution89("hello", "ohell");   
         }
 
     }
