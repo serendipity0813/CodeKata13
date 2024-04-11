@@ -350,6 +350,68 @@ namespace CodeKata13
             return answer;
         }
 
+        public static int[] Solution90(int[] numlist, int n)
+        {
+            int length = numlist.Length;
+            int[] answer = new int[length];
+            int dif = 0;
+            int closest = 0;
+
+            for(int i=0; i< length; i++)
+            {
+                dif = 10000;
+                closest = 0;
+
+                for (int j=0; j<length; j++)
+                {
+                    if(n >= numlist[j])
+                    {
+                        if (n - numlist[j] < dif && numlist[j] != 0)
+                        {
+                            dif = n - numlist[j];
+                            closest = j;
+                        }
+                        else if (n - numlist[j] == dif && numlist[j] > numlist[closest] && numlist[j] != 0)
+                        {
+                            dif = n - numlist[j];
+                            closest = j;
+                        }
+                    }
+                    else
+                    {
+                        if (numlist[j] - n < dif && numlist[j] != 0)
+                        {
+                            dif = numlist[j] - n;
+                            closest = j;
+                        }
+                        else if (numlist[j] - n == dif && numlist[j] > closest && numlist[j] != 0)
+                        {
+                            dif = numlist[j] - n;
+                            closest = j;
+                        }
+                    }
+ 
+
+
+                }
+
+                answer[i] = numlist[closest];
+                numlist[closest] = 0;
+            }
+
+            for(int i=0; i<length; i++)
+            {
+                Console.WriteLine(answer[i]);
+            }
+            return answer;
+        }
+
+        public static string Solution91(string polynomial)
+        {
+            string answer = "";
+            return answer;
+        }
+
     }
 
 
