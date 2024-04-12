@@ -409,6 +409,43 @@ namespace CodeKata13
         public static string Solution91(string polynomial)
         {
             string answer = "";
+            int variable = 0;
+            int constant = 0;
+
+            string[] polynomials = polynomial.Split(new char[] { ' ' });
+            for(int i=0; i<polynomials.Length; i++)
+            {
+                if (Int32.TryParse(polynomials[i], out int x))
+                {
+                    constant += Int32.Parse(polynomials[i]);
+                }
+                else if (polynomials[i] != "+")
+                {
+                    polynomials[i] = polynomials[i].Replace('x', '0');
+                    if (Int32.Parse(polynomials[i]) == 0)
+                        variable += 1;
+                    else
+                        variable += Int32.Parse(polynomials[i]) / 10;
+                }
+            }
+
+            if (variable == 0)
+                answer = constant.ToString();
+            else if (constant == 0)
+            {
+                if(variable != 1)
+                   answer = variable + "x";
+                else
+                    answer = "x";
+            }
+            else
+            {
+                if(variable == 1)
+                    answer = "x + " + constant;
+                else
+                    answer = variable + "x + " + constant;
+            }
+            Console.WriteLine (answer);
             return answer;
         }
 
