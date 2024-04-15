@@ -449,6 +449,34 @@ namespace CodeKata13
             return answer;
         }
 
+        public static int Solution92(int[] array)
+        {
+            int answer = 0;
+            int max = 0;
+            int[] countArray = new int[1000];
+
+            for(int i=0; i<array.Length; i++)
+            {
+                countArray[array[i]]++;
+            }
+
+            for(int i=0; i<countArray.Length; i++)
+            {
+                if (countArray[i] > max)
+                {
+                    answer = i;
+                    max = countArray[i];
+                }
+                else if (countArray[i] == max)
+                    answer = -1;
+                
+            }
+
+            Console.WriteLine(answer);
+            return answer;
+        }
+
+
     }
 
 

@@ -14,8 +14,8 @@ namespace CodeKata13
 
         public static void Main(string[] args)
         {
-   
-            ProgrammersNormal.Solution91("x + 1");   
+            int[] array = { 1};
+            ProgrammersNormal.Solution92(array);   
         }
 
     }
