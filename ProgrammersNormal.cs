@@ -476,6 +476,50 @@ namespace CodeKata13
             return answer;
         }
 
+        public static string[] Solution93(string[] quiz)
+        {
+            string[] answer = new string[quiz.Length];
+            int first = 0;
+            int second = 0;
+            int result = 0;
+
+            for(int i=0; i<quiz.Length; i++)
+            {
+                string[] words = quiz[i].Split(' ');
+                first = Int32.Parse(words[0]);
+                second = Int32.Parse(words[2]);
+                if(words[1] == "+")
+                    result = first + second;
+                else if (words[1] == "-")
+                    result = first - second;
+
+                if (result.ToString() == words[4])
+                    answer[i] = "O";
+                else
+                    answer[i] = "X";
+
+            }
+           
+            
+            return answer;
+        }
+
+        public static int Solution94(int[] common)
+        {
+            int answer = 0;
+            int sum = common[1] - common[0];
+            int mul = 0;
+            if (common[0] != 0)
+             mul = common[1] / common[0];
+
+            if (common[2] - common[1] == sum)
+                answer = common[common.Length - 1] + sum;
+            else if (common[2] / common[1] == mul)
+                answer = common[common.Length - 1] * mul;
+           
+            return answer;
+        }
+
 
     }
 
