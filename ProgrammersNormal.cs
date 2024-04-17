@@ -520,6 +520,32 @@ namespace CodeKata13
             return answer;
         }
 
+        public static int[] Solution95(int num, int total)
+        {
+            int[] answer = new int[num];
+            int first = 0;
+            
+            if(num % 2 == 0)
+            {
+                first = (total / num) - num / 2 + 1;
+            }
+            else
+            {
+                first = (total / num) - num / 2; 
+            }
+
+            for(int i=0; i< num; i++)
+            {
+                answer[i] = first + i;
+            }
+            return answer;
+        }
+
+        public static int[] Solution96(int numer1, int denom1, int numer2, int denom2)
+        {
+            int[] answer = new int[] { };
+            return answer;
+        }
 
     }
 
