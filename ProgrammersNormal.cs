@@ -543,8 +543,77 @@ namespace CodeKata13
 
         public static int[] Solution96(int numer1, int denom1, int numer2, int denom2)
         {
-            int[] answer = new int[] { };
+            int[] answer = new int[2];
+            int numer3 = 0;
+            int denom3 = 0;
+
+            if (denom1 != denom2)
+            {
+                denom3 = denom1 * denom2;
+                numer3 = numer1 * denom2 + numer2 * denom1;
+            }
+               
+            else
+            {
+                numer3 = numer1 + numer2;
+                denom3 = denom1;
+            }
+              
+            for(int i= numer3; i >= 1; i--)
+            {
+                if(numer3 % i==0 &&  denom3 % i==0)
+                {
+                    numer3 = numer3 / i;
+                    denom3 = denom3 / i;
+                }
+            }
+
+            answer[0] = numer3;
+            answer[1] = denom3;
+           
             return answer;
+        }
+
+        public static int Solution97(int[,] board)
+        {
+            int answer = 0;
+            int length = board.GetLength(0);
+            int[,] board2 = new int[length+2,length+2];
+            for (int i = 0; i < length; i++)
+            {
+                for (int j = 0; j < length; j++)
+                {
+                    if (board[i,j] == 1)
+                    {
+                        board2[i+1,j+1]++;
+                        board2[i, j]++;
+                        board2[i, j+1]++;
+                        board2[i, j+2]++;
+                        board2[i+1, j]++;
+                        board2[i+1, j+2]++;
+                        board2[i+2, j]++;
+                        board2[i+2, j+1]++;
+                        board2[i+2, j+2]++;
+                    }
+                    
+                }
+            }
+
+            for (int i = 1; i < length+1; i++)
+            {
+                for (int j = 1; j < length+1; j++)
+                {
+                    Console.Write(board2[i, j] + "   ");
+                    if (board2[i, j] == 0)
+                    {                     
+                        answer++;
+                    }
+
+                }
+                Console.WriteLine();
+            }
+
+                    return answer;
         }
 
     }
