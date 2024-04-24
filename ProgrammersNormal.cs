@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
+using System.IO.Pipes;
 using System.Linq;
 using System.Runtime.ExceptionServices;
 using System.Security.Cryptography;
@@ -614,6 +615,87 @@ namespace CodeKata13
             }
 
                     return answer;
+        }
+
+        public static int Solution98(int[,] lines)
+        {
+            int answer = 0;
+            int min = lines[0, 0];
+            int max = lines[0, 1];
+            int count = 0;
+            int length = 0;
+
+            for(int i=0; i<3; i++)
+            {
+                if(lines[i, 0] < min)
+                    min = lines[i, 0];
+
+                if (lines[i, 1] > max)
+                    max = lines[i, 1];
+            }
+
+
+            for(float i=min - 0.5f; i < max; i++)
+            {
+                count = 0;
+
+                if (lines[0, 0] <= i && i <= lines[0, 1])
+                    count++;
+
+                if (lines[1, 0] <= i && i <= lines[1, 1])
+                    count++;
+
+                if (lines[2, 0] <= i && i <= lines[2, 1])
+                    count++;
+
+                if (count > 1)
+                    length++;
+             
+            }
+
+            answer += length;
+            return answer;
+        }
+
+        public static int Solution99(int[,] dots)
+        {
+            int answer = 0;
+            double[] angle = new double[2];
+
+            angle[0] = (dots[0, 1] - dots[1, 1]) / (dots[0, 0] - dots[1, 0]) + (dots[0, 1] - dots[1, 1]) % (dots[0, 0] - dots[1, 0]);
+            angle[1] = (dots[2, 1] - dots[3, 1]) / (dots[2, 0] - dots[3, 0]) + (dots[2, 1] - dots[3, 1]) % (dots[2, 0] - dots[3, 0]);
+            if (Math.Abs(angle[0]) == Math.Abs(angle[1]))
+                answer = 1;
+
+            angle[0] = (dots[0, 1] - dots[2, 1]) / (dots[0, 0] - dots[2, 0]) + (dots[0, 1] - dots[2, 1]) % (dots[0, 0] - dots[2, 0]);
+            angle[1] = (dots[1, 1] - dots[3, 1]) / (dots[1, 0] - dots[3, 0]) + (dots[1, 1] - dots[3, 1]) % (dots[1, 0] - dots[3, 0]);
+            if (Math.Abs(angle[0]) == Math.Abs(angle[1]))
+                answer = 1;
+
+            angle[0] = (dots[0, 1] - dots[3, 1]) / (dots[0, 0] - dots[3, 0]) + (dots[0, 1] - dots[3, 1]) % (dots[0, 0] - dots[3, 0]);
+            angle[1] = (dots[1, 1] - dots[2, 1]) / (dots[1, 0] - dots[2, 0]) + (dots[1, 1] - dots[2, 1]) % (dots[1, 0] - dots[2, 0]);
+            if (Math.Abs(angle[0]) == Math.Abs(angle[1]))
+                answer = 1;
+
+            return answer;
+        }
+
+        public static int Solution100(string[] babbling)
+        {
+            int answer = 0;
+            int num = 0;
+            for(int i=0; i<babbling.Length; i++)
+            {
+                babbling[i] = babbling[i].Replace("aya", "1");
+                babbling[i] = babbling[i].Replace("ye", "2");
+                babbling[i] = babbling[i].Replace("woo", "3");
+                babbling[i] = babbling[i].Replace("ma", "4");
+                Console.WriteLine(babbling[i]);
+                if (Int32.TryParse(babbling[i], out num))
+                    answer++;
+            }
+
+            return answer;
         }
 
     }
